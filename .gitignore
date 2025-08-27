@@ -30,3 +30,20 @@
 *.exe
 *.out
 *.app
+
+#visual studio crap
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+Debug/
+Release/
+x64/
+x86/
+
+*.exe
+*.pdb
+
