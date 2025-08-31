@@ -1,28 +1,43 @@
 #include <iostream>
 
+enum class PokemonChoice
+{
+    Balbasour,
+    Charmander,
+    Squirtle,
+    InvalidChoice
+};
+
+
 int main() 
 {
+    PokemonChoice chosen_pokemon;
 
     std::cout << "Please select a pokemon: 1 for Blbasaur, 2 for Charmander, 3 for Squirtle" << std::endl;
     int choice;
     std::cin >> choice;
 
-    if (choice == 1)
+    switch (choice)
     {
+    case 1:
+        chosen_pokemon = PokemonChoice::Balbasour;
         std::cout << "You chose Balbasour!";
-    }
-    else if (choice == 2)
-    {
+        break;
+    case 2: 
+        chosen_pokemon = PokemonChoice::Charmander;
         std::cout << "You chose Charmander!";
-    }
-    else if (choice == 3)
-    {
+        break;
+    case 3:
+        chosen_pokemon = PokemonChoice::Squirtle;
         std::cout << "You chose Squirtle!";
-    }
-    else
-    {
+        break;
+    default: 
+        chosen_pokemon = PokemonChoice::InvalidChoice;
         std::cout << "Invalid choice" << std::endl;
+        break;
     }
 
+    std::cout << "good luck on your journy" << std::endl;
+    
     return 0;
 }
