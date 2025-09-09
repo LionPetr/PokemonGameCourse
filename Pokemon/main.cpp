@@ -23,7 +23,12 @@ public:
     PokemonType type;
     int health;
 
-    Pokemon() {}
+    Pokemon()
+    {
+        name = "Pikachu";
+        type = PokemonType::Electric;
+        health = 120;
+    }
     Pokemon(std::string Iname, PokemonType Itype, int Ihealth)
     {
         name = Iname;
@@ -44,7 +49,20 @@ public:
     std::string name;
     Pokemon chosenPokemon;
 
-    Trainer() {}
+    Trainer()
+    {
+        name = "Trainer";
+        chosenPokemon = Pokemon();
+        std::cout << "A player named " << name << "has been created" << std::endl;
+    }
+
+    Trainer(std::string p_name, Pokemon p_chosenPokemon)
+    {
+        name = p_name;
+        chosenPokemon = p_chosenPokemon;
+    }
+    
+
 
     void choosePokemon(int choice)
     {
