@@ -1,4 +1,4 @@
-// Player.h
+#pragma once
 #include <string>
 #include "Pokemon.hpp"
 
