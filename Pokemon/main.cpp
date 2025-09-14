@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 
 
 void waitForEnter()
@@ -131,6 +132,8 @@ public:
 		//setting player name
 		std::cout << name << ": First, what do they call you?\n";
 		std::cin >> trainer.name;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 		std::cout << name << ": Ah," << trainer.name << "! What a great name!\n";
 		waitForEnter();
 		std::cout << name << ": You must be eager to start. But first you need a Pokemon\n";
@@ -161,13 +164,17 @@ public:
 		}
 
 		trainer.choosePokemon(choice);
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 		waitForEnter();
+		std::cout << "" << std::endl;
+
 
 	}
 
 	void explainMainQuest(Trainer& trainer)
 	{
-		//clearConsole();
+		clearConsole();
 
 		std::cout << name << ": Oak-ay " << trainer.name << ", I am about to explain you about your upcoming grand adventure." << std::endl;
 		waitForEnter();
