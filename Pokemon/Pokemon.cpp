@@ -1,4 +1,5 @@
 #pragma once
+#include "PokemonType.hpp"
 #include "Pokemon.hpp"
 
 Pokemon::Pokemon()

@@ -1,5 +1,9 @@
 #pragma once
 #include "Player.hpp"
+#include "PokemonChoice.hpp"
+#include "PokemonType.hpp"
+#include "Utility.h"
+#include "iostream"
 
 Player::Player()
 {

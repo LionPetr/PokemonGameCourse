@@ -2,13 +2,7 @@
 #include <iostream>
 #include <string>
 
-enum class PokemonType {
-	FIRE,
-	GRASS,
-	WATER,
-	ELECTRIC,
-	NORMAL // Added for the default constructor
-};
+enum class PokemonType;
 
 class Pokemon
 {

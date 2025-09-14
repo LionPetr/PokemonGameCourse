@@ -2,15 +2,6 @@
 #include <string>
 #include "Pokemon.hpp"
 
-
-enum class PokemonChoice
-{
-    Balbasour,
-    Charmander,
-    Squirtle,
-    InvalidChoice
-};
-
 class Player
 {
 public:
