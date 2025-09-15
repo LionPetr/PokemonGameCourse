@@ -2,9 +2,16 @@
 #include "Game.h"
 #include "Utility.h"
 #include "Player.hpp"
+#include "Grass.h"
+#include "PokemonType.hpp"
 
 Game::Game()
 {
+	Grass forestGrass = {
+	"Forest",
+		{{"Pidgey", PokemonType::NORMAL, 40}, {"Caterpie", PokemonType::BUG, 35}},
+		70
+	};
 }
 
 void Game::gameLoop(Player& player)
