@@ -11,6 +11,7 @@ public:
 	PokemonType type;
 	int health;
 	int maxHealth;
+	int attackPower;
 
 	Pokemon();
 	Pokemon(std::string Iname, PokemonType Itype, int Ihealth);
@@ -18,5 +19,6 @@ public:
 	bool isFainted();
 	void TakeDamange(int damage);
 	void attack(Pokemon& target);
+	void heal();
 
 };

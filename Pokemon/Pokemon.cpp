@@ -8,6 +8,7 @@ Pokemon::Pokemon()
 	type = PokemonType::ELECTRIC;
 	health = 120;
 	maxHealth = health;
+	attackPower = 10;
 }
 
 Pokemon::Pokemon(std::string Iname, PokemonType Itype, int Ihealth)
@@ -16,6 +17,7 @@ Pokemon::Pokemon(std::string Iname, PokemonType Itype, int Ihealth)
 	type = Itype;
 	health = Ihealth;
 	maxHealth = Ihealth;
+	attackPower = 10;
 }
 
 bool Pokemon::isFainted()
@@ -34,8 +36,13 @@ void Pokemon::TakeDamange(int damage)
 
 void Pokemon::attack(Pokemon& target)
 {
-	int damage = 10;;
+	int damage = attackPower;
 	std::cout << name << " attacks " << target.name << " for " << damage << " damage!\n";
 	target.TakeDamange(damage);
 	std::cout << target.name << " has: " << target.health << "/" << target.maxHealth << " health left\n";
+}
+
+void Pokemon::heal()
+{
+	health = maxHealth;
 }

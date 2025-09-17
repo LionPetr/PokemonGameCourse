@@ -44,12 +44,14 @@ void Game::gameLoop(Player& player)
 			Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
 			cout << "A wild " << encounteredPokemon.name << " appeared!\n";
 			BattleManager battleManager;
-			battleManager.battle(player.chosenPokemon, encounteredPokemon);
+			battleManager.startBattle(player, encounteredPokemon);
 
 			break;
 		}
 		case 2:
-			std::cout << "wasnt built yet" << std::endl;
+			std::cout << "You visited the PokeCenter" << std::endl;
+			player.chosenPokemon.heal();
+			std::cout << player.chosenPokemon.name << "'s health is fully restored" << std::endl;
 			break;
 		case 3:
 			std::cout << "hit the actual gym first" << std::endl;
