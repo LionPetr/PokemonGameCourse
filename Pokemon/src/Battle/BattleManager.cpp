@@ -1,6 +1,6 @@
 #pragma once
-#include "BattleManager.h"
-#include "Utility.h"
+#include "../../include/Battle/BattleManager.h"
+#include "../../include/Utility/Utility.h"
 
 BattleManager::BattleManager()
 {
@@ -36,7 +36,6 @@ void BattleManager::battle(Pokemon& playerPokemon, Pokemon& wildPokemon)
 		updateBattleState();
 
 		state.playerTurn = !state.playerTurn;
-		playerPokemon.attack(wildPokemon);
 		Utility::waitForEnter();
 	}
 	handleBattleOutcome();

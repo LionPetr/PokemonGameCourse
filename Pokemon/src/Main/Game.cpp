@@ -1,11 +1,11 @@
 #pragma once
-#include "Game.h"
-#include "Utility.h"
-#include "Player.hpp"
-#include "Grass.h"
-#include "PokemonType.hpp"
-#include "WildEncounterManager.h"
-#include "BattleManager.h"
+#include "../../include/Main/Game.h"
+#include "../../include/Utility/Utility.h"
+#include "../../include/Character/Player/Player.hpp"
+#include "../../include/Pokemon/Grass.h"
+#include "../../include/Pokemon/PokemonType.hpp"
+#include "../../include/Battle/WildEncounterManager.h"
+#include "../../include/Battle/BattleManager.h"
 
 Game::Game()
 {

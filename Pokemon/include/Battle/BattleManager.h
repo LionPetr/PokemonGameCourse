@@ -1,14 +1,14 @@
 #pragma once
-#include "Player.hpp"
-#include "BattleState.h"
+#include "../../include/Character/Player/Player.hpp"
+#include "../../include/Battle/BattleState.h"
 
 class BattleManager
 {
 public:
 	BattleManager();
-
-private:
 	void startBattle(Player& player, Pokemon& wildPokemon);
+private:
+
 	void battle(Pokemon& playerPokemon, Pokemon& wildPokemon);
 	void handleBattleOutcome();
 	void updateBattleState();

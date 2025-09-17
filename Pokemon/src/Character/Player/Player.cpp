@@ -1,8 +1,8 @@
 #pragma once
-#include "Player.hpp"
-#include "PokemonChoice.hpp"
-#include "PokemonType.hpp"
-#include "Utility.h"
+#include "../../../include/Character/Player/Player.hpp"
+#include "../../../include/Pokemon/PokemonChoice.hpp"
+#include "../../../include/Pokemon/PokemonType.hpp"
+#include "../../../include/Utility/Utility.h"
 #include "iostream"
 
 Player::Player()
