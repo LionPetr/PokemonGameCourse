@@ -5,6 +5,7 @@
 #include "Grass.h"
 #include "PokemonType.hpp"
 #include "WildEncounterManager.h"
+#include "BattleManager.h"
 
 Game::Game()
 {
@@ -42,6 +43,9 @@ void Game::gameLoop(Player& player)
 			WildEncounterManager encounterManager;
 			Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
 			cout << "A wild " << encounteredPokemon.name << " appeared!\n";
+			BattleManager battleManager;
+			battleManager.battle(player.chosenPokemon, encounteredPokemon);
+
 			break;
 		}
 		case 2:
