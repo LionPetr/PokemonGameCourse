@@ -1,8 +1,8 @@
-#include "Game.h"
-#include "Player.hpp"
+#include "../include/Main/Game.h"
+#include "../include/Character/Player/Player.hpp"
 #include <iostream>
 #include <limits>
-#include "ProfessorOak.h"
+#include "../include/Character/ProfessorOak.h"
 
 
 

@@ -1,10 +1,11 @@
 #pragma once
-#include "Game.h"
-#include "Utility.h"
-#include "Player.hpp"
-#include "Grass.h"
-#include "PokemonType.hpp"
-#include "WildEncounterManager.h"
+#include "../../include/Main/Game.h"
+#include "../../include/Utility/Utility.h"
+#include "../../include/Character/Player/Player.hpp"
+#include "../../include/Pokemon/Grass.h"
+#include "../../include/Pokemon/PokemonType.hpp"
+#include "../../include/Battle/WildEncounterManager.h"
+#include "../../include/Battle/BattleManager.h"
 
 Game::Game()
 {
@@ -42,10 +43,15 @@ void Game::gameLoop(Player& player)
 			WildEncounterManager encounterManager;
 			Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
 			cout << "A wild " << encounteredPokemon.name << " appeared!\n";
+			BattleManager battleManager;
+			battleManager.startBattle(player, encounteredPokemon);
+
 			break;
 		}
 		case 2:
-			std::cout << "wasnt built yet" << std::endl;
+			std::cout << "You visited the PokeCenter" << std::endl;
+			player.chosenPokemon.heal();
+			std::cout << player.chosenPokemon.name << "'s health is fully restored" << std::endl;
 			break;
 		case 3:
 			std::cout << "hit the actual gym first" << std::endl;

@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Player.hpp"
+#include "../../include/Character/Player/Player.hpp"
 
 class ProfessorOak
 {
