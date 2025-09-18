@@ -4,8 +4,13 @@
 
 Squirtle::Squirtle() : Pokemon("Squirtle", PokemonType::WATER, 100, 35) {};
 
-void Squirtle::waterSplash(Pokemon& target)
+void Squirtle::attack(Pokemon* target)
 {
-	std::cout << getName() << " uses Bug Bite on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	waterSplash(target);
+}
+
+void Squirtle::waterSplash(Pokemon* target)
+{
+	std::cout << getName() << " uses Bug Bite on " << target->getName() << "!" << std::endl;
+	target->TakeDamange(20);
 }

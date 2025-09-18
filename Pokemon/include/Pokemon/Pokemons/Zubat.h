@@ -5,5 +5,6 @@ class Zubat : public Pokemon
 {
 	Zubat();
 private:
-	void supersonic(Pokemon& target);
+	void attack(Pokemon* target) override;
+	void supersonic(Pokemon* target);
 };

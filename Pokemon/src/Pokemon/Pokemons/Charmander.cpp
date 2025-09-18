@@ -4,8 +4,13 @@
 
 Charmander::Charmander() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {};
 
-void Charmander::flameBurst(Pokemon& target)
+void Charmander::attack(Pokemon* target)
 {
-	std::cout << getName() << " uses Flame Burst on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	flameBurst(target);
+}
+
+void Charmander::flameBurst(Pokemon* target)
+{
+	std::cout << name << " uses Flame Burst on " << target->getName() << "!" << std::endl;
+	target->TakeDamange(20);
 }

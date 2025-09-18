@@ -5,5 +5,7 @@ class Pidgey : public Pokemon
 {
 	Pidgey();
 private:
-	void wingAttack(Pokemon& target);
+	void attack(Pokemon* target) override;
+
+	void wingAttack(Pokemon* target);
 };

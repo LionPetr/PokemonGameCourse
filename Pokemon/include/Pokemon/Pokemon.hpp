@@ -18,7 +18,7 @@ public:
 
 	bool isFainted();
 	void TakeDamange(int damage);
-	void attack(Pokemon& target);
+	virtual void attack(Pokemon* target) = 0;
 	void heal();
 	std::string getName();
 

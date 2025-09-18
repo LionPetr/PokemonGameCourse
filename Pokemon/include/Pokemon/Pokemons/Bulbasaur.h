@@ -5,5 +5,7 @@ class Bulbasaur : public Pokemon
 {
 	Bulbasaur();
 private:
-	void vineWhip(Pokemon& target);
+	void attack(Pokemon* target) override;
+
+	void vineWhip(Pokemon* target);
 };

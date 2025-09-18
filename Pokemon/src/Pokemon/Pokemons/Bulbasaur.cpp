@@ -4,8 +4,13 @@
 
 Bulbasaur::Bulbasaur() : Pokemon("Bulbasaur", PokemonType::GRASS, 100, 10) {};
 
-void Bulbasaur::vineWhip(Pokemon& target)
+void Bulbasaur::attack(Pokemon* target)
 {
-	std::cout << name << " uses Bug Bite on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	vineWhip(target);
+}
+
+void Bulbasaur::vineWhip(Pokemon* target)
+{
+	std::cout << name << " uses Vine Whip on " << target->getName() << "!" << std::endl;
+	target->TakeDamange(20);
 }

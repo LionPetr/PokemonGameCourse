@@ -34,14 +34,6 @@ void Pokemon::TakeDamange(int damage)
 	}
 }
 
-void Pokemon::attack(Pokemon& target)
-{
-	int damage = attackPower;
-	std::cout << name << " attacks " << target.name << " for " << damage << " damage!\n";
-	target.TakeDamange(damage);
-	std::cout << target.name << " has: " << target.health << "/" << target.maxHealth << " health left\n";
-}
-
 void Pokemon::heal()
 {
 	health = maxHealth;

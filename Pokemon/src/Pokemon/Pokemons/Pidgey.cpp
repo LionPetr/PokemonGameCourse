@@ -4,8 +4,15 @@
 
 Pidgey::Pidgey() : Pokemon("Pidgey", PokemonType::NORMAL, 100, 35) {};
 
-void Pidgey::wingAttack(Pokemon& target)
+
+void Pidgey::attack(Pokemon* target)
 {
-	std::cout << name << " uses Wing Attack on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	wingAttack(target);
+}
+
+
+void Pidgey::wingAttack(Pokemon* target)
+{
+	std::cout << name << " uses Wing Attack on " << target->getName() << "!" << std::endl;
+	target->TakeDamange(20);
 }

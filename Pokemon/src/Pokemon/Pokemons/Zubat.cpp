@@ -4,8 +4,13 @@
 
 Zubat::Zubat() : Pokemon("Zubat", PokemonType::POISON, 100, 10) {};
 
-void Zubat::supersonic(Pokemon& target)
+void Zubat::attack(Pokemon* target)
 {
-	std::cout << name << " uses Supersonic on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	supersonic(target);
+}
+
+void Zubat::supersonic(Pokemon* target)
+{
+	std::cout << name << " uses Supersonic on " << target->getName() << "!" << std::endl;
+	target->TakeDamange(20);
 }
