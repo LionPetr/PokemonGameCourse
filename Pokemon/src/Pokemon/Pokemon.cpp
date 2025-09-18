@@ -11,13 +11,13 @@ Pokemon::Pokemon()
 	attackPower = 10;
 }
 
-Pokemon::Pokemon(std::string Iname, PokemonType Itype, int Ihealth)
+Pokemon::Pokemon(std::string Iname, PokemonType Itype, int Ihealth, int IattackPower)
 {
 	name = Iname;
 	type = Itype;
 	health = Ihealth;
 	maxHealth = Ihealth;
-	attackPower = 10;
+	attackPower = IattackPower;
 }
 
 bool Pokemon::isFainted()
@@ -45,4 +45,9 @@ void Pokemon::attack(Pokemon& target)
 void Pokemon::heal()
 {
 	health = maxHealth;
+}
+
+std::string Pokemon::getName()
+{
+	return name;
 }

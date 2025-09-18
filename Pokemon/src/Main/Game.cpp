@@ -12,7 +12,7 @@ Game::Game()
 	forestGrass =
 	{
 		"Forest",
-		{{"Pidgey", PokemonType::NORMAL, 40}, {"Caterpie", PokemonType::BUG, 35}},
+		{{"Pidgey", PokemonType::NORMAL, 40, 20}, {"Caterpie", PokemonType::BUG, 35, 20}},
 		70
 	};
 }
@@ -42,7 +42,7 @@ void Game::gameLoop(Player& player)
 		{
 			WildEncounterManager encounterManager;
 			Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
-			cout << "A wild " << encounteredPokemon.name << " appeared!\n";
+			cout << "A wild " << encounteredPokemon.getName() << " appeared!\n";
 			BattleManager battleManager;
 			battleManager.startBattle(player, encounteredPokemon);
 
@@ -51,7 +51,7 @@ void Game::gameLoop(Player& player)
 		case 2:
 			std::cout << "You visited the PokeCenter" << std::endl;
 			player.chosenPokemon.heal();
-			std::cout << player.chosenPokemon.name << "'s health is fully restored" << std::endl;
+			std::cout << player.chosenPokemon.getName() << "'s health is fully restored" << std::endl;
 			break;
 		case 3:
 			std::cout << "hit the actual gym first" << std::endl;
