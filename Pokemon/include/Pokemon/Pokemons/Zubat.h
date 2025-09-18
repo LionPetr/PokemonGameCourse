@@ -3,6 +3,7 @@
 
 class Zubat : public Pokemon
 {
+public:
 	Zubat();
 private:
 	void attack(Pokemon* target) override;

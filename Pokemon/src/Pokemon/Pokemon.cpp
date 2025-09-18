@@ -43,3 +43,14 @@ std::string Pokemon::getName()
 {
 	return name;
 }
+
+int Pokemon::getHealth()
+{
+	return health;
+}
+
+int Pokemon::getMaxHealth()
+{
+	return maxHealth;
+}
+

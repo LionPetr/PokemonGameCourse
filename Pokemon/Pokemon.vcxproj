@@ -160,9 +160,12 @@
     <ClCompile Include="src\Character\Player\Player.cpp" />
     <ClCompile Include="src\Pokemon\Pokemon.cpp" />
     <ClCompile Include="src\Character\ProfessorOak.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemons\Bulbasaur.cpp" />
     <ClCompile Include="src\Pokemon\Pokemons\Caterpie.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemons\Charmander.cpp" />
     <ClCompile Include="src\Pokemon\Pokemons\Pidgey.cpp" />
     <ClCompile Include="src\Pokemon\Pokemons\Pikachu.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemons\Squirtle.cpp" />
     <ClCompile Include="src\Pokemon\Pokemons\Zubat.cpp" />
     <ClCompile Include="src\Utility\Utility.cpp" />
     <ClCompile Include="src\Battle\WildEncounterManager.cpp" />
@@ -181,9 +184,12 @@
     <ClInclude Include="include\Character\Player\Player.hpp" />
     <ClInclude Include="include\Pokemon\Pokemon.hpp" />
     <ClInclude Include="include\Pokemon\PokemonChoice.hpp" />
+    <ClInclude Include="include\Pokemon\Pokemons\Bulbasaur.h" />
     <ClInclude Include="include\Pokemon\Pokemons\Caterpie.h" />
+    <ClInclude Include="include\Pokemon\Pokemons\Charmander.h" />
     <ClInclude Include="include\Pokemon\Pokemons\Pidgey.h" />
     <ClInclude Include="include\Pokemon\Pokemons\Pikachu.h" />
+    <ClInclude Include="include\Pokemon\Pokemons\Squirtle.h" />
     <ClInclude Include="include\Pokemon\Pokemons\Zubat.h" />
     <ClInclude Include="include\Pokemon\PokemonType.hpp" />
     <ClInclude Include="include\Character\ProfessorOak.h" />

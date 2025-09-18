@@ -21,5 +21,8 @@ public:
 	virtual void attack(Pokemon* target) = 0;
 	void heal();
 	std::string getName();
+	int getHealth();
+	int getMaxHealth();
+	
 
 };
