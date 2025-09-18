@@ -33,6 +33,7 @@
 
 #visual studio crap
 .vs/
+.VS.db
 *.suo
 *.user
 *.userosscache
