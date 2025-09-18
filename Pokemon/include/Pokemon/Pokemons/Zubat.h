@@ -4,6 +4,6 @@
 class Zubat : public Pokemon
 {
 	Zubat();
-
+private:
 	void supersonic(Pokemon& target);
 };

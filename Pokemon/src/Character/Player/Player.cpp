@@ -36,5 +36,5 @@ void Player::choosePokemon(int choice)
 		std::cout << "Invalid choice, chose Pickachu" << std::endl;
 		break;
 	}
-	std::cout << "You chose " << chosenPokemon.name << std::endl;
+	std::cout << "You chose " << chosenPokemon.getName() << std::endl;
 }

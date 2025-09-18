@@ -4,6 +4,6 @@
 class Pidgey : public Pokemon
 {
 	Pidgey();
-
+private:
 	void wingAttack(Pokemon& target);
 };

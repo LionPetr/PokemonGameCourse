@@ -9,7 +9,7 @@ BattleManager::BattleManager()
 
 void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
 {
-	std::cout << "battling " << wildPokemon.name << "..." << std::endl;
+	std::cout << "battling " << wildPokemon.getName() << "..." << std::endl;
 	state = 
 	{
 		&player.chosenPokemon,
@@ -45,11 +45,11 @@ void BattleManager::handleBattleOutcome()
 {
 	if (state.playerPokemon->isFainted())
 	{
-		std::cout << state.playerPokemon->name << " has fained! you lose the battle" << std::endl;
+		std::cout << state.playerPokemon->getName() << " has fained! you lose the battle" << std::endl;
 	}
 	else
 	{
-		std::cout << "you defeated the wild " << state.wildPokemon->name << "!" << std::endl;
+		std::cout << "you defeated the wild " << state.wildPokemon->getName() << "!" << std::endl;
 	}
 }
 

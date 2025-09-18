@@ -6,13 +6,13 @@ enum class PokemonType;
 
 class Pokemon
 {
-public:
+protected:
 	std::string name;
 	PokemonType type;
 	int health;
 	int maxHealth;
 	int attackPower;
-
+public:
 	Pokemon();
 	Pokemon(std::string Iname, PokemonType Itype, int Ihealth, int IattackPower);
 
@@ -20,5 +20,6 @@ public:
 	void TakeDamange(int damage);
 	void attack(Pokemon& target);
 	void heal();
+	std::string getName();
 
 };

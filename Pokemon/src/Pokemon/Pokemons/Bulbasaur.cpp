@@ -1,10 +1,10 @@
 #pragma once
-#include "../../../include/Pokemon/Pokemons/Caterpie.h"
+#include "../../../include/Pokemon/Pokemons/Bulbasaur.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
 
-Caterpie::Caterpie() : Pokemon("Caterpie", PokemonType::BUG, 100, 10) {};
+Bulbasaur::Bulbasaur() : Pokemon("Bulbasaur", PokemonType::GRASS, 100, 10) {};
 
-void Caterpie::bugBite(Pokemon& target)
+void Bulbasaur::vineWhip(Pokemon& target)
 {
 	std::cout << name << " uses Bug Bite on " << target.getName() << "!" << std::endl;
 	target.TakeDamange(20);

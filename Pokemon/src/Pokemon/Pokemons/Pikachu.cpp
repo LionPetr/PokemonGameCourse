@@ -6,6 +6,6 @@ Pikachu::Pikachu() : Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 20) {};
 
 void Pikachu::thunderShock(Pokemon& target)
 {
-	std::cout << name << " uses Thunder Shock on " << target.name << "!" << std::endl;
+	std::cout << name << " uses Thunder Shock on " << target.getName() << "!" << std::endl;
 	target.TakeDamange(20);
 }
