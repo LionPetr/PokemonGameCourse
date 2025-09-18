@@ -4,12 +4,18 @@
 
 Caterpie::Caterpie()
 	: Pokemon("Caterpie", PokemonType::BUG, 100, {
-		Move("BUG BITE", 25),
+		Move("STICKY WEB", 25),
 		Move("TACKLE", 10)
 		}) {
 };
 
-void Caterpie::attack(Pokemon* target)
+void Caterpie::attack(Move selectedMove, Pokemon* target)
 {
-	selectAndUseMove(target);
+	Pokemon::attack(selectedMove, target);
+
+	if (selectedMove.name == "STICKY WEB")
+	{
+		moves[0].power -= 2;
+		std::cout << name << " became weaker " << std::endl;
+	}
 }

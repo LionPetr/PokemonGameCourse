@@ -9,7 +9,22 @@ Bulbasaur::Bulbasaur()
 		}) {
 }
 
-void Bulbasaur::attack(Pokemon* target)
+void Bulbasaur::attack(Move selectedMove, Pokemon* target)
 {
-	selectAndUseMove(target);
+	Pokemon::attack(selectedMove, target);
+
+	if (selectedMove.name == "VINE WHIP")
+	{
+		int secondHitChance = rand() % 2;
+
+		if (secondHitChance == 1)
+		{
+			Pokemon::attack(selectedMove, target);
+			std::cout << name << " hits again with a second " << selectedMove.name << "!" << std::endl;
+		}
+		else
+		{
+			std::cout << target->getName() << "dodged the second hit!" << std::endl;
+		}
+	}
 }

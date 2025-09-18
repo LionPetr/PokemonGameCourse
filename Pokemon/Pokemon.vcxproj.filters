@@ -60,9 +60,6 @@
     <ClCompile Include="src\Pokemon\Pokemons\Squirtle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Battle\Move.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Character\Player\Player.hpp">

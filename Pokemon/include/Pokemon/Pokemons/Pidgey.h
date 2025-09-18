@@ -6,6 +6,5 @@ class Pidgey : public Pokemon
 public:
 	Pidgey();
 private:
-	void attack(Pokemon* target) override;
-
+	void attack(Move selectedMove, Pokemon* target);
 };

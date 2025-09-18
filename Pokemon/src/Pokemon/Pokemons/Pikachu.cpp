@@ -4,13 +4,23 @@
 
 Pikachu::Pikachu()
 	: Pokemon("Pikachu", PokemonType::ELECTRIC, 100, {
-			Move("THUNDER SHOCK", 25),
+			Move("THUNDER BOLT", 25),
 			Move("TACKLE", 10)
 		}) {
 };
 
-void Pikachu::attack(Pokemon* target)
+void Pikachu::attack(Move selectedMove, Pokemon* target)
 {
-	selectAndUseMove(target);
+	if (selectedMove.name == "THUNDER BOLT")
+	{
+		if (rand() % 4 != 1)
+		{
+			Pokemon::attack(selectedMove, target);
+		}
+	}
+	else
+	{
+		Pokemon::attack(selectedMove, target);
+	}
 }
 

@@ -9,7 +9,13 @@ Charmander::Charmander()
 		}) {
 };
 
-void Charmander::attack(Pokemon* target)
+void Charmander::attack(Move selectedMove, Pokemon* target)
 {
-	selectAndUseMove(target);
+	Pokemon::attack(selectedMove, target);
+
+	if (selectedMove.name == "FLAME BURST")
+	{
+		takeDamage(5);
+		std::cout << name << " burns itself " << "health: " << health << "/" << maxHealth << std::endl;
+	}
 }

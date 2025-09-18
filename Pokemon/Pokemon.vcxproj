@@ -155,7 +155,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Battle\BattleManager.cpp" />
-    <ClCompile Include="src\Battle\Move.cpp" />
     <ClCompile Include="src\Main\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Character\Player\Player.cpp" />

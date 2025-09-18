@@ -4,13 +4,18 @@
 
 Squirtle::Squirtle()
 	: Pokemon("Squirtle", PokemonType::WATER, 100, {
-		Move("WATER SPLASH", 25),
+		Move("RAPID SPIN", 8),
 		Move("TACKLE", 10)
 		}) {
 };
 
-void Squirtle::attack(Pokemon* target)
+void Squirtle::attack(Move selectedMove, Pokemon* target)
 {
-	selectAndUseMove(target);
+	if (selectedMove.name == "RAPID SPIN")
+	{
+		Pokemon::attack(selectedMove, target);
+		Pokemon::attack(selectedMove, target);
+		Pokemon::attack(selectedMove, target);
+	}
 }
 

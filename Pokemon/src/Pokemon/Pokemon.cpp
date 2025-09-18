@@ -39,6 +39,15 @@ void Pokemon::heal()
 	health = maxHealth;
 }
 
+void Pokemon::heal(int amount)
+{
+	health += amount;
+	if (health > maxHealth)
+	{
+		health = maxHealth;
+	}
+}
+
 std::string Pokemon::getName()
 {
 	return name;

@@ -6,5 +6,5 @@ class Bulbasaur : public Pokemon
 public:
 	Bulbasaur();
 private:
-	void attack(Pokemon* target) override;
+	void attack(Move selectedMove, Pokemon* target);
 };

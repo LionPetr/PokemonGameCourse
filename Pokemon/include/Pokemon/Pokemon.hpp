@@ -24,9 +24,10 @@ public:
 
 	bool isFainted();
 	void takeDamage(int damage);
-	virtual void attack(Pokemon* target) = 0;
-	void attack(Move selectedMove, Pokemon* target);
+	//virtual void attack(Pokemon* target) = 0;
+	virtual void attack(Move selectedMove, Pokemon* target);
 	void heal();
+	void heal(int amount);
 	std::string getName();
 	int getHealth();
 	int getMaxHealth();
