@@ -47,7 +47,7 @@ void ProfessorOak::offerPokemonChoices(Player& player)
 	std::cin >> choice;
 
 	//make sure choice is valid.
-	while (choice != 1 && choice != 2 && choice != 3)
+	while (choice < 1 || choice > 4)
 	{
 		std::cout << "\n";
 		std::cout << name << ": Sorry but that choice is invalid try again: ";

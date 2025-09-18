@@ -9,6 +9,7 @@ BattleManager::BattleManager()
 void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
 {
 	std::cout << "battling " << wildPokemon.getName() << "..." << std::endl;
+	Utility::waitForEnter();
 	state =
 	{
 		player.chosenPokemon,
@@ -23,12 +24,13 @@ void BattleManager::battle(Pokemon& playerPokemon, Pokemon& wildPokemon)
 {
 	while (state.battleOnGoing)
 	{
-		if (state.playerTurn)
+		Utility::clearConsole();
+		if (state.playerTurn && state.playerPokemon->canAttack())
 		{
 			state.playerPokemon->selectAndUseMove(state.wildPokemon);
 			std::cout << wildPokemon.getName() << " is at " << wildPokemon.getHealth() << "/" << wildPokemon.getMaxHealth() << std::endl;
 		}
-		else
+		else if(state.wildPokemon->canAttack())
 		{
 			state.wildPokemon->selectAndUseMove(state.playerPokemon);
 			std::cout << playerPokemon.getName() << " is at " << playerPokemon.getHealth() << "/" << playerPokemon.getMaxHealth() << std::endl;

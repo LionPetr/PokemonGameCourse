@@ -1,6 +1,7 @@
 #pragma once
 #include "../../../include/Pokemon/Pokemons/Charmander.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
+#include "../../../include/Battle/BattleEffects/ParalyzedEffect.h"
 
 Charmander::Charmander()
 	: Pokemon("Charmander", PokemonType::FIRE, 100, {

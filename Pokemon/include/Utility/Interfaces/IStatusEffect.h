@@ -1,9 +1,11 @@
 #pragma once
-#include <string>
 #include "../../Pokemon/Pokemon.hpp"
+
+class Pokemon; 
 
 class IStatusEffect
 {
+public:
 	virtual void applyEffect(Pokemon* target) = 0;
 
 	virtual std::string getEffectName() = 0;

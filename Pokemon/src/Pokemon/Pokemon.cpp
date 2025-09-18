@@ -2,6 +2,7 @@
 #include "../../include/Pokemon/PokemonType.hpp"
 #include "../../include/Pokemon/Pokemon.hpp"
 #include "../../include/Battle/Move.h"
+#include "../../include/Battle/BattleEffects/ParalyzedEffect.h"
 
 Pokemon::Pokemon()
 {
@@ -72,6 +73,43 @@ void Pokemon::selectAndUseMove(Pokemon* target)
 
 	useMove(selectedMove, target);
 }
+
+bool Pokemon::canAttack()
+{
+	if (appliedEffect != NULL)
+	{
+		return appliedEffect->turnEndEffect(this);
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void Pokemon::applyEffect(StatusEffectType effectToApply)
+{
+	switch (effectToApply)
+	{
+	case StatusEffectType::PARALYZED:
+		appliedEffect = new ParalyzedEffect();
+		appliedEffect->applyEffect(this);
+		break;
+	default:
+		appliedEffect = nullptr;
+	}
+}
+
+void Pokemon::clearEffect()
+{
+	appliedEffect = NULL;
+}
+
+bool Pokemon::canApplyEffect()
+{
+	return appliedEffect == NULL;
+}
+
+
 
 void Pokemon::printAvailableMoves()
 {

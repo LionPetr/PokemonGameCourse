@@ -43,6 +43,9 @@ void Player::choosePokemon(int choice)
 	case PokemonChoice::Squirtle:
 		chosenPokemon = new Squirtle();
 		break;
+	case PokemonChoice::Pikachu:
+		chosenPokemon = new Pikachu();
+		break;
 	default:
 		chosenPokemon = new Pikachu();
 		std::cout << "Invalid choice, chose Pickachu" << std::endl;
