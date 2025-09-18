@@ -38,7 +38,7 @@ void ProfessorOak::offerPokemonChoices(Player& player)
 	std::cout << name << ": Choose wisely...\n";
 	Utility::waitForEnter();
 	std::cout << "1. Bulbasaur - The grass type.\n";
-	std::cout << "2. grass - The fire type. \n";
+	std::cout << "2. Charmander - The fire type. \n";
 	std::cout << "3. Squirtle- The water type. \n";
 	Utility::waitForEnter();
 

@@ -12,7 +12,7 @@ Game::Game()
 	forestGrass =
 	{
 		"Forest",
-		{{"Pidgey", PokemonType::NORMAL, 40}, {"Caterpie", PokemonType::BUG, 35}},
+		{{"Pidgey", PokemonType::NORMAL, 40, 20}, {"Caterpie", PokemonType::BUG, 35, 20}},
 		70
 	};
 }

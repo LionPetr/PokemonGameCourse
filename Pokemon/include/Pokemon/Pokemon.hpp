@@ -14,7 +14,7 @@ public:
 	int attackPower;
 
 	Pokemon();
-	Pokemon(std::string Iname, PokemonType Itype, int Ihealth);
+	Pokemon(std::string Iname, PokemonType Itype, int Ihealth, int IattackPower);
 
 	bool isFainted();
 	void TakeDamange(int damage);
