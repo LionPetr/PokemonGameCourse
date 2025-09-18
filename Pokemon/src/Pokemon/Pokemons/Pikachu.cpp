@@ -2,10 +2,25 @@
 #include "../../../include/Pokemon/Pokemons/Pikachu.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
 
-Pikachu::Pikachu() : Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 20) {};
+Pikachu::Pikachu()
+	: Pokemon("Pikachu", PokemonType::ELECTRIC, 100, {
+			Move("THUNDER BOLT", 25),
+			Move("TACKLE", 10)
+		}) {
+};
 
-void Pikachu::thunderShock(Pokemon& target)
+void Pikachu::attack(Move selectedMove, Pokemon* target)
 {
-	std::cout << name << " uses Thunder Shock on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	if (selectedMove.name == "THUNDER BOLT")
+	{
+		if (rand() % 4 != 1)
+		{
+			Pokemon::attack(selectedMove, target);
+		}
+	}
+	else
+	{
+		Pokemon::attack(selectedMove, target);
+	}
 }
+

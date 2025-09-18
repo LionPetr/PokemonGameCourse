@@ -1,23 +1,37 @@
 #pragma once
 #include "../../include/Main/Game.h"
-#include "../../include/Utility/Utility.h"
 #include "../../include/Character/Player/Player.hpp"
 #include "../../include/Pokemon/Grass.h"
 #include "../../include/Pokemon/PokemonType.hpp"
 #include "../../include/Battle/WildEncounterManager.h"
 #include "../../include/Battle/BattleManager.h"
+#include "../../include/Pokemon/Pokemons/Pidgey.h"
+#include "../../include/Pokemon/Pokemons/Caterpie.h"
+#include "../../include/Pokemon/Pokemons/Zubat.h"
+
+
 
 Game::Game()
 {
 	forestGrass =
 	{
 		"Forest",
-		{{"Pidgey", PokemonType::NORMAL, 40, 20}, {"Caterpie", PokemonType::BUG, 35, 20}},
+		{new Pidgey(), new Caterpie(), new Zubat()},
 		70
 	};
 }
 
-void Game::gameLoop(Player& player)
+Game::~Game()
+{
+	delete(wildPokemon);
+	for (Pokemon* p : forestGrass.PokemonList)
+	{
+		delete p;
+	}
+	forestGrass.PokemonList.clear();
+}
+
+void Game::gameLoop(Player* player)
 {
 	bool keepPlaying = true;
 	int choice;
@@ -25,7 +39,7 @@ void Game::gameLoop(Player& player)
 	while (keepPlaying)
 	{
 		Utility::clearConsole();
-		std::cout << "What would you like to do next - " << player.name << std::endl;
+		std::cout << "What would you like to do next - " << player->name << std::endl;
 		std::cout << "1. Battle Wild Pokemon" << std::endl;
 		std::cout << "2. Visit PokeCenter" << std::endl;
 		std::cout << "3. Challenge Gyms" << std::endl;
@@ -41,17 +55,15 @@ void Game::gameLoop(Player& player)
 		case 1:
 		{
 			WildEncounterManager encounterManager;
-			Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
-			cout << "A wild " << encounteredPokemon.getName() << " appeared!\n";
+			Pokemon* encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+			cout << "A wild " << encounteredPokemon->getName() << " appeared!\n";
 			BattleManager battleManager;
-			battleManager.startBattle(player, encounteredPokemon);
-
+			battleManager.startBattle(*player, *encounteredPokemon);
+			//delete(encounteredPokemon);
 			break;
 		}
 		case 2:
-			std::cout << "You visited the PokeCenter" << std::endl;
-			player.chosenPokemon.heal();
-			std::cout << player.chosenPokemon.getName() << "'s health is fully restored" << std::endl;
+			visitPokeCenter(player);
 			break;
 		case 3:
 			std::cout << "hit the actual gym first" << std::endl;
@@ -79,6 +91,13 @@ void Game::gameLoop(Player& player)
 
 	}
 	std::cout << "bye bye" << std::endl;
+}
+
+void Game::visitPokeCenter(Player* player)
+{
+	std::cout << "You visited the PokeCenter" << std::endl;
+	player->chosenPokemon->heal();
+	std::cout << player->chosenPokemon->getName() << "'s health is fully restored" << std::endl;
 }
 
 

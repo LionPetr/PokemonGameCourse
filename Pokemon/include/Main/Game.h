@@ -6,8 +6,12 @@ class Game
 {
 public:
 	Game();
-	void gameLoop(Player& player);
+	~Game();
+	void gameLoop(Player* player);
+	void visitPokeCenter(Player* player);
+
 
 private:
-	 Grass forestGrass;
+	Grass forestGrass;
+	Pokemon* wildPokemon;
 };

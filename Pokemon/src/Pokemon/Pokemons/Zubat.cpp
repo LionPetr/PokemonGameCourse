@@ -2,10 +2,21 @@
 #include "../../../include/Pokemon/Pokemons/Zubat.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
 
-Zubat::Zubat() : Pokemon("Zubat", PokemonType::POISON, 100, 10) {};
+Zubat::Zubat()
+	: Pokemon("Zubat", PokemonType::POISON, 100, {
+		Move("LEECH LIFE", 25),
+		Move("TACKLE", 10)
+		}) {
+};
 
-void Zubat::supersonic(Pokemon& target)
+void Zubat::attack(Move selectedMove, Pokemon* target)
 {
-	std::cout << name << " uses Supersonic on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	Pokemon::attack(selectedMove, target);
+
+	if (selectedMove.name == "LEECH LIFE")
+	{
+		heal(selectedMove.power);
+		std::cout << name << " healed himself for " << selectedMove.power << " health" << std::endl;
+	}
 }
+

@@ -22,7 +22,7 @@ int main()
 	professor->explainMainQuest(*player);
 
 	Game* game= new Game();;
-	game->gameLoop(*player);
+	game->gameLoop(player);
 
 	delete player;
 	delete professor;

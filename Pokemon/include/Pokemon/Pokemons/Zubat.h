@@ -3,7 +3,8 @@
 
 class Zubat : public Pokemon
 {
+public:
 	Zubat();
 private:
-	void supersonic(Pokemon& target);
+	void attack(Move selectedMove, Pokemon* target);
 };

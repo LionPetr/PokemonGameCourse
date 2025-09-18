@@ -2,10 +2,20 @@
 #include "../../../include/Pokemon/Pokemons/Caterpie.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
 
-Caterpie::Caterpie() : Pokemon("Caterpie", PokemonType::BUG, 100, 10) {};
+Caterpie::Caterpie()
+	: Pokemon("Caterpie", PokemonType::BUG, 100, {
+		Move("STICKY WEB", 25),
+		Move("TACKLE", 10)
+		}) {
+};
 
-void Caterpie::bugBite(Pokemon& target)
+void Caterpie::attack(Move selectedMove, Pokemon* target)
 {
-	std::cout << name << " uses Bug Bite on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	Pokemon::attack(selectedMove, target);
+
+	if (selectedMove.name == "STICKY WEB")
+	{
+		moves[0].power -= 2;
+		std::cout << name << " became weaker " << std::endl;
+	}
 }

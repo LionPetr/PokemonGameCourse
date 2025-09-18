@@ -2,10 +2,20 @@
 #include "../../../include/Pokemon/Pokemons/Charmander.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
 
-Charmander::Charmander() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {};
+Charmander::Charmander()
+	: Pokemon("Charmander", PokemonType::FIRE, 100, {
+		Move("FLAME BURST", 25),
+		Move("TACKLE", 10)
+		}) {
+};
 
-void Charmander::flameBurst(Pokemon& target)
+void Charmander::attack(Move selectedMove, Pokemon* target)
 {
-	std::cout << getName() << " uses Flame Burst on " << target.getName() << "!" << std::endl;
-	target.TakeDamange(20);
+	Pokemon::attack(selectedMove, target);
+
+	if (selectedMove.name == "FLAME BURST")
+	{
+		takeDamage(5);
+		std::cout << name << " burns itself " << "health: " << health << "/" << maxHealth << std::endl;
+	}
 }

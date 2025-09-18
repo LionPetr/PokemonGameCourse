@@ -6,12 +6,14 @@ class Player
 {
 public:
     std::string name;
-    Pokemon chosenPokemon;
+    Pokemon* chosenPokemon;
 
     // Constructors
     Player();
 
-    Player(const std::string& p_name, const Pokemon& p_chosenPokemon);
+    Player(const std::string& p_name);
+
+    ~Player();
 
     // Method to choose Pokemon
     void choosePokemon(int choice);

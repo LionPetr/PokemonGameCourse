@@ -1,6 +1,5 @@
 #pragma once
 #include "../../include/Character/ProfessorOak.h"
-#include "../../include/Utility/Utility.h"
 
 ProfessorOak::ProfessorOak()
 {

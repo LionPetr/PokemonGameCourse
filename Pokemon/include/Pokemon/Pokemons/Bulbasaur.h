@@ -3,7 +3,8 @@
 
 class Bulbasaur : public Pokemon
 {
+public:
 	Bulbasaur();
 private:
-	void vineWhip(Pokemon& target);
+	void attack(Move selectedMove, Pokemon* target);
 };
