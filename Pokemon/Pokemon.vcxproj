@@ -154,13 +154,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Battle\BattleManager.cpp" />
+    <ClCompile Include="src\Main\Game.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Character\Player\Player.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemon.cpp" />
+    <ClCompile Include="src\Character\ProfessorOak.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemons\Caterpie.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemons\Pidgey.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemons\Pikachu.cpp" />
+    <ClCompile Include="src\Pokemon\Pokemons\Zubat.cpp" />
+    <ClCompile Include="src\Utility\Utility.cpp" />
+    <ClCompile Include="src\Battle\WildEncounterManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".idea\.idea.Pokemon\.idea\indexLayout.xml" />
     <Content Include=".idea\.idea.Pokemon\.idea\vcs.xml" />
     <Content Include=".idea\.idea.Pokemon\.idea\workspace.xml" />
     <Content Include="Pokemon.vcxproj.filters" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Battle\BattleManager.h" />
+    <ClInclude Include="include\Battle\BattleState.h" />
+    <ClInclude Include="include\Main\Game.h" />
+    <ClInclude Include="include\Pokemon\Grass.h" />
+    <ClInclude Include="include\Character\Player\Player.hpp" />
+    <ClInclude Include="include\Pokemon\Pokemon.hpp" />
+    <ClInclude Include="include\Pokemon\PokemonChoice.hpp" />
+    <ClInclude Include="include\Pokemon\Pokemons\Caterpie.h" />
+    <ClInclude Include="include\Pokemon\Pokemons\Pidgey.h" />
+    <ClInclude Include="include\Pokemon\Pokemons\Pikachu.h" />
+    <ClInclude Include="include\Pokemon\Pokemons\Zubat.h" />
+    <ClInclude Include="include\Pokemon\PokemonType.hpp" />
+    <ClInclude Include="include\Character\ProfessorOak.h" />
+    <ClInclude Include="include\Utility\Utility.h" />
+    <ClInclude Include="include\Battle\WildEncounterManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

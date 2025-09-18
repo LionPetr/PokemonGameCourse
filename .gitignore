@@ -31,6 +31,7 @@
 *.out
 *.app
 
+<<<<<<< HEAD
 # Visual Studio workspace files
 .vs/
 *.suo
@@ -58,4 +59,21 @@ Release/
 *.iobj
 
 *.vcxproj.filters
+=======
+#visual studio crap
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+Debug/
+Release/
+x64/
+x86/
+
+*.exe
+*.pdb
+>>>>>>> 1f3165de5c86404f179c8449fd89aa3bf477f392
 
