@@ -12,6 +12,6 @@ public:
 
 
 private:
-	 Grass forestGrass;
-	 Pokemon* wildPokemon;
+	Grass forestGrass;
+	Pokemon* wildPokemon;
 };

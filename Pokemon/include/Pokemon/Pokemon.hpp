@@ -32,12 +32,12 @@ public:
 	int getMaxHealth();
 	void selectAndUseMove(Pokemon* target);
 
-	protected:
-		
-		void printAvailableMoves();
-		int selectMove();
-		void useMove(Move selectedMove, Pokemon* target);
+protected:
 
-	
+	void printAvailableMoves();
+	int selectMove();
+	void useMove(Move selectedMove, Pokemon* target);
+
+
 
 };

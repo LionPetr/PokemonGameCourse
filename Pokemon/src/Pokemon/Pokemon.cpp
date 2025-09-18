@@ -76,7 +76,7 @@ void Pokemon::printAvailableMoves()
 
 int Pokemon::selectMove()
 {
-	int choice; 
+	int choice;
 	std::cout << "Choose a move:";
 	std::cin >> choice;
 
@@ -97,8 +97,8 @@ void Pokemon::useMove(Move selectedMove, Pokemon* target)
 	Utility::waitForEnter();
 }
 
-void Pokemon::attack(Move selectedMove, Pokemon* target) 
-{ 
+void Pokemon::attack(Move selectedMove, Pokemon* target)
+{
 	target->takeDamage(selectedMove.power);
 }
 

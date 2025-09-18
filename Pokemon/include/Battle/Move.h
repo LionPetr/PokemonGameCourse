@@ -4,7 +4,7 @@
 
 struct Move
 {
-	std::string name; 
+	std::string name;
 	int power;
 
 	Move(const std::string& moveName, int movePower)

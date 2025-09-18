@@ -3,13 +3,13 @@
 
 BattleManager::BattleManager()
 {
-	
+
 }
 
 void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
 {
 	std::cout << "battling " << wildPokemon.getName() << "..." << std::endl;
-	state = 
+	state =
 	{
 		player.chosenPokemon,
 		&wildPokemon,
@@ -64,5 +64,5 @@ void BattleManager::updateBattleState()
 	{
 		state.battleOnGoing = false;
 	}
-	
+
 }
