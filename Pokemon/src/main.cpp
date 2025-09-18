@@ -14,15 +14,19 @@
 
 int main()
 {
-	Player player;
-	ProfessorOak professor;
+	Player* player = new Player();
+	ProfessorOak* professor = new ProfessorOak();
 
-	professor.greetTrainer(player);
-	professor.offerPokemonChoices(player);
-	professor.explainMainQuest(player);
+	professor->greetTrainer(*player);
+	professor->offerPokemonChoices(*player);
+	professor->explainMainQuest(*player);
 
-	Game game;
-	game.gameLoop(player);
+	Game* game= new Game();;
+	game->gameLoop(*player);
+
+	delete player;
+	delete professor;
+	delete game;
 
 	return 0;
 }
