@@ -7,5 +7,4 @@ public:
 	Zubat();
 private:
 	void attack(Pokemon* target) override;
-	void supersonic(Pokemon* target);
 };

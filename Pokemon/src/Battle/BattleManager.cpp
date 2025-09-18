@@ -1,6 +1,5 @@
 #pragma once
 #include "../../include/Battle/BattleManager.h"
-#include "../../include/Utility/Utility.h"
 
 BattleManager::BattleManager()
 {
@@ -26,14 +25,13 @@ void BattleManager::battle(Pokemon& playerPokemon, Pokemon& wildPokemon)
 	{
 		if (state.playerTurn)
 		{
-			state.playerPokemon->attack(state.wildPokemon);
+			state.playerPokemon->selectAndUseMove(state.wildPokemon);
 			std::cout << wildPokemon.getName() << " is at " << wildPokemon.getHealth() << "/" << wildPokemon.getMaxHealth() << std::endl;
 		}
 		else
 		{
-			state.wildPokemon->attack(state.playerPokemon);
+			state.wildPokemon->selectAndUseMove(state.playerPokemon);
 			std::cout << playerPokemon.getName() << " is at " << playerPokemon.getHealth() << "/" << playerPokemon.getMaxHealth() << std::endl;
-
 		}
 
 		updateBattleState();

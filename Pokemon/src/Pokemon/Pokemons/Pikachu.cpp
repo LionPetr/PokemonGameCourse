@@ -2,15 +2,14 @@
 #include "../../../include/Pokemon/Pokemons/Pikachu.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
 
-Pikachu::Pikachu() : Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 20) {};
+Pikachu::Pikachu() 
+	: Pokemon("Pikachu", PokemonType::ELECTRIC, 100, {
+			Move("THUNDER SHOCK", 25),
+			Move("TACKLE", 10)
+		}) {};
 
 void Pikachu::attack(Pokemon* target)
 {
-	thunderShock(target);
+	selectAndUseMove(target);
 }
 
-void Pikachu::thunderShock(Pokemon* target)
-{
-	std::cout << name << " uses Thunder Shock on " << target->getName() << "!" << std::endl;
-	target->TakeDamange(20);
-}

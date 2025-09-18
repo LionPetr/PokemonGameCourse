@@ -2,17 +2,15 @@
 #include "../../../include/Pokemon/Pokemons/Pidgey.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
 
-Pidgey::Pidgey() : Pokemon("Pidgey", PokemonType::NORMAL, 100, 35) {};
+Pidgey::Pidgey() 
+	: Pokemon("Pidgey", PokemonType::NORMAL, 100, {
+		Move("WING ATTACK", 25),
+		Move("TACKLE", 10)
+		}) {};
 
 
 void Pidgey::attack(Pokemon* target)
 {
-	wingAttack(target);
+	selectAndUseMove(target);
 }
 
-
-void Pidgey::wingAttack(Pokemon* target)
-{
-	std::cout << name << " uses Wing Attack on " << target->getName() << "!" << std::endl;
-	target->TakeDamange(20);
-}

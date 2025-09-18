@@ -7,5 +7,4 @@ public:
 	Caterpie();
 private:
 	void attack(Pokemon* target) override;
-	void bugBite(Pokemon* target);
 };

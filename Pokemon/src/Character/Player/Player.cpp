@@ -2,7 +2,6 @@
 #include "../../../include/Character/Player/Player.hpp"
 #include "../../../include/Pokemon/PokemonChoice.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
-#include "../../../include/Utility/Utility.h"
 
 #include "../../../include/Pokemon/Pokemons/Bulbasaur.h"
 #include "../../../include/Pokemon/Pokemons/Charmander.h"

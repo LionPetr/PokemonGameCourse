@@ -8,5 +8,4 @@ public:
 private:
 	void attack(Pokemon* target) override;
 
-	void thunderShock(Pokemon* target);
 };

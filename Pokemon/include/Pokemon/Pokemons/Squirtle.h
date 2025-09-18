@@ -7,5 +7,4 @@ public:
 	Squirtle();
 private:
 	void attack(Pokemon* target) override;
-	void waterSplash(Pokemon* target);
 }; 

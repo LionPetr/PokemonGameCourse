@@ -7,6 +7,4 @@ public:
 	Bulbasaur();
 private:
 	void attack(Pokemon* target) override;
-
-	void vineWhip(Pokemon* target);
 };

@@ -1,6 +1,5 @@
 #pragma once
 #include "../../include/Main/Game.h"
-#include "../../include/Utility/Utility.h"
 #include "../../include/Character/Player/Player.hpp"
 #include "../../include/Pokemon/Grass.h"
 #include "../../include/Pokemon/PokemonType.hpp"
