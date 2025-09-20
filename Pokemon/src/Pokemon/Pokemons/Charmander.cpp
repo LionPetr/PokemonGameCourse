@@ -1,7 +1,6 @@
 #pragma once
 #include "../../../include/Pokemon/Pokemons/Charmander.h"
 #include "../../../include/Pokemon/PokemonType.hpp"
-#include "../../../include/Battle/BattleEffects/ParalyzedEffect.h"
 
 Charmander::Charmander()
 	: Pokemon("Charmander", PokemonType::FIRE, 100, {
@@ -18,5 +17,9 @@ void Charmander::attack(Move selectedMove, Pokemon* target)
 	{
 		takeDamage(5);
 		std::cout << name << " burns itself " << "health: " << health << "/" << maxHealth << std::endl;
+		if (target->canApplyEffect())
+		{
+			target->applyEffect(StatusEffectType::BURNED);
+		}
 	}
 }

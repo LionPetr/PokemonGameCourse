@@ -1,8 +1,8 @@
-#pragma once
 #include "../../include/Pokemon/PokemonType.hpp"
 #include "../../include/Pokemon/Pokemon.hpp"
 #include "../../include/Battle/Move.h"
 #include "../../include/Battle/BattleEffects/ParalyzedEffect.h"
+#include "../../include/Battle/BattleEffects/BurnedEffect.h"
 
 Pokemon::Pokemon()
 {
@@ -92,6 +92,10 @@ void Pokemon::applyEffect(StatusEffectType effectToApply)
 	{
 	case StatusEffectType::PARALYZED:
 		appliedEffect = new ParalyzedEffect();
+		appliedEffect->applyEffect(this);
+		break;
+	case StatusEffectType::BURNED:
+		appliedEffect = new BurnedEffect();
 		appliedEffect->applyEffect(this);
 		break;
 	default:

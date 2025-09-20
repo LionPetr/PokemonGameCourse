@@ -63,6 +63,9 @@
     <ClCompile Include="src\Battle\BattleEffects\ParalyzedEffect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Battle\BattleEffects\BurnedEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Character\Player\Player.hpp">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Battle\BattleEffects\StatusEffectType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Battle\BattleEffects\BurnedEffect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

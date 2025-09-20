@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Battle\BattleEffects\BurnedEffect.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\ParalyzedEffect.cpp" />
     <ClCompile Include="src\Battle\BattleManager.cpp" />
     <ClCompile Include="src\Main\Game.cpp" />
@@ -178,6 +179,7 @@
     <Content Include="Pokemon.vcxproj.filters" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Battle\BattleEffects\BurnedEffect.h" />
     <ClInclude Include="include\Battle\BattleEffects\ParalyzedEffect.h" />
     <ClInclude Include="include\Battle\BattleEffects\StatusEffectType.h" />
     <ClInclude Include="include\Battle\BattleManager.h" />
