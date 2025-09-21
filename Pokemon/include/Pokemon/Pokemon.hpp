@@ -36,7 +36,7 @@ public:
 	std::string getName();
 	int getHealth();
 	int getMaxHealth();
-	void selectAndUseMove(Pokemon* target);
+	void selectAndUseMove(Pokemon* target, bool playerTurn);
 	
 	bool canAttack();
 	void applyEffect(StatusEffectType effectToApply);

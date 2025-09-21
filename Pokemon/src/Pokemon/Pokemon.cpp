@@ -3,6 +3,7 @@
 #include "../../include/Battle/Move.h"
 #include "../../include/Battle/BattleEffects/ParalyzedEffect.h"
 #include "../../include/Battle/BattleEffects/BurnedEffect.h"
+#include "../../include/Battle/BattleEffects/SleepingEffect.h"
 
 Pokemon::Pokemon()
 {
@@ -64,12 +65,22 @@ int Pokemon::getMaxHealth()
 	return maxHealth;
 }
 
-void Pokemon::selectAndUseMove(Pokemon* target)
+void Pokemon::selectAndUseMove(Pokemon* target, bool playerTurn)
 {
-	printAvailableMoves();
+	Move selectedMove = moves[0];
+	if (playerTurn)
+	{
+		printAvailableMoves();
 
-	int choice = selectMove();
-	Move selectedMove = moves[choice - 1];
+		int choice = selectMove();
+		selectedMove = moves[choice - 1];
+	}
+	else
+	{
+		int moveChoice = (rand() % moves.size());
+		selectedMove = moves[moveChoice];
+	}
+
 
 	useMove(selectedMove, target);
 }

@@ -27,12 +27,12 @@ void BattleManager::battle(Pokemon& playerPokemon, Pokemon& wildPokemon)
 		Utility::clearConsole();
 		if (state.playerTurn && state.playerPokemon->canAttack())
 		{
-			state.playerPokemon->selectAndUseMove(state.wildPokemon);
+			state.playerPokemon->selectAndUseMove(state.wildPokemon, true);
 			std::cout << wildPokemon.getName() << " is at " << wildPokemon.getHealth() << "/" << wildPokemon.getMaxHealth() << std::endl;
 		}
 		else if(state.wildPokemon->canAttack())
 		{
-			state.wildPokemon->selectAndUseMove(state.playerPokemon);
+			state.wildPokemon->selectAndUseMove(state.playerPokemon, false);
 			std::cout << playerPokemon.getName() << " is at " << playerPokemon.getHealth() << "/" << playerPokemon.getMaxHealth() << std::endl;
 		}
 
@@ -42,6 +42,10 @@ void BattleManager::battle(Pokemon& playerPokemon, Pokemon& wildPokemon)
 		Utility::waitForEnter();
 	}
 	handleBattleOutcome();
+}
+
+void BattleManager::handleBattle(Pokemon& playerPokemon, Pokemon& wildPokemon)
+{
 }
 
 void BattleManager::handleBattleOutcome()

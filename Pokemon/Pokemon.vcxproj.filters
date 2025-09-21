@@ -66,6 +66,12 @@
     <ClCompile Include="src\Battle\BattleEffects\BurnedEffect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Battle\BattleEffects\SleepingEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Battle\BattleEffects\PoisonedEffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Character\Player\Player.hpp">
@@ -135,6 +141,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Battle\BattleEffects\BurnedEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Battle\BattleEffects\SleepingEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Battle\BattleEffects\PoisonedEffect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

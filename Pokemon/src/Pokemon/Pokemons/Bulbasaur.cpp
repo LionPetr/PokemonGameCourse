@@ -24,7 +24,7 @@ void Bulbasaur::attack(Move selectedMove, Pokemon* target)
 		}
 		else
 		{
-			std::cout << target->getName() << "dodged the second hit!" << std::endl;
+			std::cout << target->getName() << " dodged the second hit!" << std::endl;
 		}
 	}
 }
