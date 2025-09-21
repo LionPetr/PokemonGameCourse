@@ -1,7 +1,9 @@
-#pragma once
 #include "../../include/Pokemon/PokemonType.hpp"
 #include "../../include/Pokemon/Pokemon.hpp"
 #include "../../include/Battle/Move.h"
+#include "../../include/Battle/BattleEffects/ParalyzedEffect.h"
+#include "../../include/Battle/BattleEffects/BurnedEffect.h"
+#include "../../include/Battle/BattleEffects/SleepingEffect.h"
 
 Pokemon::Pokemon()
 {
@@ -63,15 +65,66 @@ int Pokemon::getMaxHealth()
 	return maxHealth;
 }
 
-void Pokemon::selectAndUseMove(Pokemon* target)
+void Pokemon::selectAndUseMove(Pokemon* target, bool playerTurn)
 {
-	printAvailableMoves();
+	Move selectedMove = moves[0];
+	if (playerTurn)
+	{
+		printAvailableMoves();
 
-	int choice = selectMove();
-	Move selectedMove = moves[choice - 1];
+		int choice = selectMove();
+		selectedMove = moves[choice - 1];
+	}
+	else
+	{
+		int moveChoice = (rand() % moves.size());
+		selectedMove = moves[moveChoice];
+	}
+
 
 	useMove(selectedMove, target);
 }
+
+bool Pokemon::canAttack()
+{
+	if (appliedEffect != NULL)
+	{
+		return appliedEffect->turnEndEffect(this);
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void Pokemon::applyEffect(StatusEffectType effectToApply)
+{
+	switch (effectToApply)
+	{
+	case StatusEffectType::PARALYZED:
+		appliedEffect = new ParalyzedEffect();
+		appliedEffect->applyEffect(this);
+		break;
+	case StatusEffectType::BURNED:
+		appliedEffect = new BurnedEffect();
+		appliedEffect->applyEffect(this);
+		break;
+	default:
+		appliedEffect = nullptr;
+	}
+}
+
+void Pokemon::clearEffect()
+{
+	appliedEffect = NULL;
+}
+
+bool Pokemon::canApplyEffect()
+{
+	return appliedEffect == NULL;
+}
+
+
 
 void Pokemon::printAvailableMoves()
 {

@@ -154,6 +154,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Battle\BattleEffects\BurnedEffect.cpp" />
+    <ClCompile Include="src\Battle\BattleEffects\ParalyzedEffect.cpp" />
+    <ClCompile Include="src\Battle\BattleEffects\PoisonedEffect.cpp" />
+    <ClCompile Include="src\Battle\BattleEffects\SleepingEffect.cpp" />
     <ClCompile Include="src\Battle\BattleManager.cpp" />
     <ClCompile Include="src\Main\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -177,6 +181,11 @@
     <Content Include="Pokemon.vcxproj.filters" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Battle\BattleEffects\BurnedEffect.h" />
+    <ClInclude Include="include\Battle\BattleEffects\ParalyzedEffect.h" />
+    <ClInclude Include="include\Battle\BattleEffects\PoisonedEffect.h" />
+    <ClInclude Include="include\Battle\BattleEffects\SleepingEffect.h" />
+    <ClInclude Include="include\Battle\BattleEffects\StatusEffectType.h" />
     <ClInclude Include="include\Battle\BattleManager.h" />
     <ClInclude Include="include\Battle\BattleState.h" />
     <ClInclude Include="include\Battle\Move.h" />
@@ -194,6 +203,7 @@
     <ClInclude Include="include\Pokemon\Pokemons\Zubat.h" />
     <ClInclude Include="include\Pokemon\PokemonType.hpp" />
     <ClInclude Include="include\Character\ProfessorOak.h" />
+    <ClInclude Include="include\Utility\Interfaces\IStatusEffect.h" />
     <ClInclude Include="include\Utility\Utility.h" />
     <ClInclude Include="include\Battle\WildEncounterManager.h" />
   </ItemGroup>

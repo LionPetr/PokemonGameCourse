@@ -5,6 +5,7 @@
 Pikachu::Pikachu()
 	: Pokemon("Pikachu", PokemonType::ELECTRIC, 100, {
 			Move("THUNDER BOLT", 25),
+			Move("THUNDER SHOCK", 15),
 			Move("TACKLE", 10)
 		}) {
 };
@@ -16,6 +17,13 @@ void Pikachu::attack(Move selectedMove, Pokemon* target)
 		if (rand() % 4 != 1)
 		{
 			Pokemon::attack(selectedMove, target);
+		}
+	}
+	else if (selectedMove.name == "THUNDER SHOCK")
+	{
+		if (target->canApplyEffect())
+		{
+			target->applyEffect(StatusEffectType::PARALYZED);
 		}
 	}
 	else

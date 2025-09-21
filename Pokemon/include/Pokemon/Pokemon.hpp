@@ -4,10 +4,13 @@
 #include <vector>
 #include "../../include/Utility/Utility.h"
 #include "../../include/Battle/Move.h"
+#include "../../include/Utility/Interfaces/IStatusEffect.h"
+#include "../../include/Battle/BattleEffects/StatusEffectType.h"
 
 struct Move;
 
 enum class PokemonType;
+class IStatusEffect;
 
 class Pokemon
 {
@@ -17,6 +20,8 @@ protected:
 	int health;
 	int maxHealth;
 	std::vector<Move> moves;
+	IStatusEffect* appliedEffect;
+
 
 public:
 	Pokemon();
@@ -31,7 +36,12 @@ public:
 	std::string getName();
 	int getHealth();
 	int getMaxHealth();
-	void selectAndUseMove(Pokemon* target);
+	void selectAndUseMove(Pokemon* target, bool playerTurn);
+	
+	bool canAttack();
+	void applyEffect(StatusEffectType effectToApply);
+	void clearEffect();
+	bool canApplyEffect();
 
 protected:
 

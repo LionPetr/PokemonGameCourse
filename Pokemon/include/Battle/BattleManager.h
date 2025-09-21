@@ -10,6 +10,7 @@ public:
 private:
 
 	void battle(Pokemon& playerPokemon, Pokemon& wildPokemon);
+	void handleBattle(Pokemon& playerPokemon, Pokemon& wildPokemon);
 	void handleBattleOutcome();
 	void updateBattleState();
 

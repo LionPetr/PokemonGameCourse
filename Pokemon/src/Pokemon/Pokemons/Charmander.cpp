@@ -17,5 +17,9 @@ void Charmander::attack(Move selectedMove, Pokemon* target)
 	{
 		takeDamage(5);
 		std::cout << name << " burns itself " << "health: " << health << "/" << maxHealth << std::endl;
+		if (target->canApplyEffect())
+		{
+			target->applyEffect(StatusEffectType::BURNED);
+		}
 	}
 }
