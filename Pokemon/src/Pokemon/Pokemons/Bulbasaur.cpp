@@ -13,6 +13,7 @@ void Bulbasaur::attack(Move selectedMove, Pokemon* target)
 {
 	Pokemon::attack(selectedMove, target);
 
+
 	if (selectedMove.name == "VINE WHIP")
 	{
 		int secondHitChance = rand() % 2;

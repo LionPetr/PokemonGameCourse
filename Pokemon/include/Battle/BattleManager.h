@@ -9,8 +9,9 @@ public:
 	void startBattle(Player& player, Pokemon& wildPokemon);
 private:
 
-	void battle(Pokemon& playerPokemon, Pokemon& wildPokemon);
+	void battle(Player& player, Pokemon& wildPokemon);
 	void handleBattle(Pokemon& playerPokemon, Pokemon& wildPokemon);
+	bool handleActionChoice(Player& player);
 	void handleBattleOutcome();
 	void updateBattleState();
 

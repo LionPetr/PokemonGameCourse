@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "../../../include/Pokemon/Pokemon.hpp"
+#include "../../Inventory/InventoryManager.h"
 
 class Player
 {
@@ -17,4 +18,8 @@ public:
 
     // Method to choose Pokemon
     void choosePokemon(int choice);
+    InventoryManager& getInventory();
+
+private:
+    InventoryManager inventory;
 };
