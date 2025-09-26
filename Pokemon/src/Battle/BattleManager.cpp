@@ -46,7 +46,7 @@ void BattleManager::battle(Player& player, Pokemon& wildPokemon)
 		{
 			Utility::clearConsole();
 			state.wildPokemon->selectAndUseMove(state.playerPokemon, false);
-			std::cout << player.chosenPokemon->getName() << " is at " << player.chosenPokemon->getHealth() << "/" << player.chosenPokemon->getMaxHealth() << std::endl;
+			std::cout << player.chosenPokemon->getName() << " is at " << state.playerPokemon->getHealth() << "/" << state.playerPokemon->getMaxHealth() << std::endl;
 		}
 
 		updateBattleState();
@@ -63,6 +63,8 @@ void BattleManager::handleBattle(Pokemon& playerPokemon, Pokemon& wildPokemon)
 
 bool BattleManager::handleActionChoice(Player& player)
 {
+	int actualIndex;
+
 	Utility::clearConsole();
 	std::cout << "It is your turn!" << std::endl;
 	std::cout << "1. attack" << std::endl;
@@ -91,18 +93,20 @@ bool BattleManager::handleActionChoice(Player& player)
 		std::cin >> choice;
 		Utility::clearInputBuffer();
 
-		while (choice < 1 || choice > player.getInventory().getSize() + 1)
+		while (choice < 1 || choice > player.getInventory().getIndexMap().size() + 1)
 		{
 			std::cout << "Invalid choice, try again: ";
 			std::cin >> choice;
 		}
 
-		if(choice == player.getInventory().getSize() + 1)
+		//go back feature
+		if(choice == player.getInventory().getIndexMap().size() + 1)
 		{
 			return false;
 		}
 
-		player.getInventory().useItem(choice - 1);
+		actualIndex = player.getInventory().getIndexMap()[choice - 1];
+		player.getInventory().useItem(actualIndex);
 		return true;
 		break;
 	case 3:

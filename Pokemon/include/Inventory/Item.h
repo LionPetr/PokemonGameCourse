@@ -13,12 +13,13 @@ public:
 	int getQuantity();
 	void increaseQuantity();
 	void decreaseQuantity();
+
+	bool operator==(const Item& other);
 	
 
 private:
 	std::string name;
 	ItemType itemType;
 	int itemQuantity = 1;
-
 
 };

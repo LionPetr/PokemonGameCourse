@@ -37,3 +37,8 @@ void Item::decreaseQuantity()
 	itemQuantity--;
 }
 
+bool Item::operator==(const Item& other)
+{
+	return name == other.name;
+}
+
