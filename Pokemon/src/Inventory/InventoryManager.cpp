@@ -1,6 +1,6 @@
 #include "../../include/Inventory/InventoryManager.h"
-#include <iostream>
 #include "../../include/Utility/Utility.h"
+#include <iostream>
 
 
 /*
@@ -12,7 +12,9 @@
 */
 InventoryManager::InventoryManager()
 {
-	itemList.push_back(new Item("small magic potion", ItemType::POTION));
+	itemList.push_back(new HealingPotion("Small Healing Potion", 20));
+	itemList.push_back(new HealingPotion("Medium Healing Potion", 40));
+	itemList.push_back(new HealingPotion("Large Healing Potion", 100));
 }
 
 InventoryManager::~InventoryManager()
@@ -55,10 +57,10 @@ void InventoryManager::addItem(Item& item)
 	}
 }
 
-void InventoryManager::useItem(int position)
+void InventoryManager::useItem(int position, Pokemon* target)
 {
 	std::cout << itemList[position]->getName() << " was used" << std::endl;
-	//implement the effects of the item
+	itemList[position]->useItem(target);
 	Utility::waitForEnter();
 	itemList[position]->decreaseQuantity();
 }

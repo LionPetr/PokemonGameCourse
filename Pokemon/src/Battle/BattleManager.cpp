@@ -55,11 +55,14 @@ void BattleManager::battle(Player& player, Pokemon& wildPokemon)
 		Utility::waitForEnter();
 	}
 	handleBattleOutcome();
+	if (!state.playerPokemon->isFainted())
+	{
+		handleReward(player, wildPokemon);
+	}
+	
 }
 
-void BattleManager::handleBattle(Pokemon& playerPokemon, Pokemon& wildPokemon)
-{
-}
+
 
 bool BattleManager::handleActionChoice(Player& player)
 {
@@ -106,7 +109,7 @@ bool BattleManager::handleActionChoice(Player& player)
 		}
 
 		actualIndex = player.getInventory().getIndexMap()[choice - 1];
-		player.getInventory().useItem(actualIndex);
+		player.getInventory().useItem(actualIndex, player.chosenPokemon);
 		return true;
 		break;
 	case 3:
@@ -144,4 +147,12 @@ void BattleManager::updateBattleState()
 		state.battleOnGoing = false;
 	}
 
+}
+
+void BattleManager::handleReward(Player& player, Pokemon& wildPokemon)
+{
+	int choice = rand() % wildPokemon.getDropList().size();
+	Item chosenItem = wildPokemon.getDropList()[choice];
+	std::cout << wildPokemon.getName() << " dropped a " << chosenItem.getName();
+	player.givePlayerItem(chosenItem);
 }

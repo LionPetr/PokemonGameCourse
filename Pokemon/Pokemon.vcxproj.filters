@@ -78,6 +78,9 @@
     <ClCompile Include="src\Inventory\InventoryManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Inventory\Potion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Character\Player\Player.hpp">
@@ -164,10 +167,7 @@
     <ClInclude Include="include\Inventory\InventoryManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Inventory\Potion.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Inventory\Potion.h">
+    <ClInclude Include="include\Inventory\HealingPotion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

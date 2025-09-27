@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 #include "ItemType.h"
+//#include "../Pokemon/Pokemon.hpp"
+
+class Pokemon;
 
 class Item
 {
@@ -13,6 +16,7 @@ public:
 	int getQuantity();
 	void increaseQuantity();
 	void decreaseQuantity();
+	virtual void useItem(Pokemon* target);
 
 	bool operator==(const Item& other);
 	

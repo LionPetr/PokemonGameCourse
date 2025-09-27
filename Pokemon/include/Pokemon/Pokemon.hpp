@@ -6,7 +6,9 @@
 #include "../../include/Battle/Move.h"
 #include "../../include/Utility/Interfaces/IStatusEffect.h"
 #include "../../include/Battle/BattleEffects/StatusEffectType.h"
+#include "../Inventory/HealingPotion.h"
 
+class Item;
 struct Move;
 
 enum class PokemonType;
@@ -21,6 +23,8 @@ protected:
 	int maxHealth;
 	std::vector<Move> moves;
 	IStatusEffect* appliedEffect;
+
+	std::vector<Item> dropList;
 
 
 public:
@@ -42,6 +46,8 @@ public:
 	void applyEffect(StatusEffectType effectToApply);
 	void clearEffect();
 	bool canApplyEffect();
+
+	const std::vector<Item>& getDropList();
 
 protected:
 

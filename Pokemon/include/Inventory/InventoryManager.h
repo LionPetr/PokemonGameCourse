@@ -1,5 +1,5 @@
 #pragma once
-#include "Item.h"
+#include "HealingPotion.h"
 #include <vector>
 
 class InventoryManager
@@ -11,7 +11,7 @@ public:
 	void printInventory();
 	int getSize();
 	void addItem(Item& item);
-	void useItem(int position);
+	void useItem(int position, Pokemon* target);
 	std::vector<int> getIndexMap();
 
 

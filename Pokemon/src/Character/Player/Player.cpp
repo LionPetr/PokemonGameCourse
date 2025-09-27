@@ -58,3 +58,8 @@ InventoryManager& Player::getInventory()
 {
 	return inventory;
 }
+
+void Player::givePlayerItem(Item& item)
+{
+	inventory.addItem(item);
+}

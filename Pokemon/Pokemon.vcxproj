@@ -161,6 +161,7 @@
     <ClCompile Include="src\Battle\BattleManager.cpp" />
     <ClCompile Include="src\Inventory\InventoryManager.cpp" />
     <ClCompile Include="src\Inventory\Item.cpp" />
+    <ClCompile Include="src\Inventory\Potion.cpp" />
     <ClCompile Include="src\Main\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Character\Player\Player.cpp" />
@@ -194,7 +195,7 @@
     <ClInclude Include="include\Inventory\InventoryManager.h" />
     <ClInclude Include="include\Inventory\Item.h" />
     <ClInclude Include="include\Inventory\ItemType.h" />
-    <ClInclude Include="include\Inventory\Potion.h" />
+    <ClInclude Include="include\Inventory\HealingPotion.h" />
     <ClInclude Include="include\Main\Game.h" />
     <ClInclude Include="include\Pokemon\Grass.h" />
     <ClInclude Include="include\Character\Player\Player.hpp" />
@@ -212,7 +213,6 @@
     <ClInclude Include="include\Utility\Interfaces\IStatusEffect.h" />
     <ClInclude Include="include\Utility\Utility.h" />
     <ClInclude Include="include\Battle\WildEncounterManager.h" />
-    <ClInclude Include="src\Inventory\Potion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

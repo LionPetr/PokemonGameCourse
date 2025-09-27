@@ -1,5 +1,5 @@
 #include "../../include/Inventory/Item.h"
-
+#include <iostream>
 Item::Item()
 {
 	name = "item";
@@ -35,6 +35,13 @@ void Item::increaseQuantity()
 void Item::decreaseQuantity()
 {
 	itemQuantity--;
+}
+
+
+
+void Item::useItem(Pokemon* target)
+{
+	std::cout << "used item" << std::endl;
 }
 
 bool Item::operator==(const Item& other)

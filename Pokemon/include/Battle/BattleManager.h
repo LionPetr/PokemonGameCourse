@@ -10,10 +10,10 @@ public:
 private:
 
 	void battle(Player& player, Pokemon& wildPokemon);
-	void handleBattle(Pokemon& playerPokemon, Pokemon& wildPokemon);
 	bool handleActionChoice(Player& player);
 	void handleBattleOutcome();
 	void updateBattleState();
+	void handleReward(Player& player, Pokemon& wildPokemon);
 
 
 	BattleState state;
