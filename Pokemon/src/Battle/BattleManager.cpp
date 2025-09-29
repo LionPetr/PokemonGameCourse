@@ -109,7 +109,7 @@ bool BattleManager::handleActionChoice(Player& player)
 		}
 
 		actualIndex = player.getInventory().getIndexMap()[choice - 1];
-		player.getInventory().useItem(actualIndex, player.chosenPokemon);
+		player.getInventory().useItem(actualIndex, state);
 		return true;
 		break;
 	case 3:

@@ -1,6 +1,8 @@
 #pragma once
 #include "HealingPotion.h"
+#include "Pokeball.h"
 #include <vector>
+#include "../Battle/BattleState.h"
 
 class InventoryManager
 {
@@ -11,7 +13,7 @@ public:
 	void printInventory();
 	int getSize();
 	void addItem(Item& item);
-	void useItem(int position, Pokemon* target);
+	void useItem(int position, BattleState& state);
 	std::vector<int> getIndexMap();
 
 

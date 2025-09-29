@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Inventory\Pokeball.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\BurnedEffect.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\ParalyzedEffect.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\PoisonedEffect.cpp" />
@@ -196,6 +197,7 @@
     <ClInclude Include="include\Inventory\Item.h" />
     <ClInclude Include="include\Inventory\ItemType.h" />
     <ClInclude Include="include\Inventory\HealingPotion.h" />
+    <ClInclude Include="include\Inventory\Pokeball.h" />
     <ClInclude Include="include\Main\Game.h" />
     <ClInclude Include="include\Pokemon\Grass.h" />
     <ClInclude Include="include\Character\Player\Player.hpp" />

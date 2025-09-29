@@ -81,6 +81,9 @@
     <ClCompile Include="src\Inventory\Potion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Inventory\Pokeball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Character\Player\Player.hpp">
@@ -168,6 +171,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Inventory\HealingPotion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Inventory\Pokeball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

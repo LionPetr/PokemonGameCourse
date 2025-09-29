@@ -15,6 +15,10 @@ InventoryManager::InventoryManager()
 	itemList.push_back(new HealingPotion("Small Healing Potion", 20));
 	itemList.push_back(new HealingPotion("Medium Healing Potion", 40));
 	itemList.push_back(new HealingPotion("Large Healing Potion", 100));
+	itemList.push_back(new Pokeball("Red Poke Ball", 10));
+	itemList.push_back(new Pokeball("Blue Poke Ball", 20));
+	itemList.push_back(new Pokeball("Black Poke Ball", 50));
+
 }
 
 InventoryManager::~InventoryManager()
@@ -57,10 +61,21 @@ void InventoryManager::addItem(Item& item)
 	}
 }
 
-void InventoryManager::useItem(int position, Pokemon* target)
+void InventoryManager::useItem(int position, BattleState& state)
 {
-	std::cout << itemList[position]->getName() << " was used" << std::endl;
-	itemList[position]->useItem(target);
+	Item* item = itemList[position];
+	std::cout << item->getName() << " was used" << std::endl;
+
+	if (item->getItemTarget() == ItemTarget::SELF)
+	{
+		item->useItem(state.playerPokemon);
+	}
+	else
+	{
+		item->useItem(state.wildPokemon);
+	}
+
+	
 	Utility::waitForEnter();
 	itemList[position]->decreaseQuantity();
 }

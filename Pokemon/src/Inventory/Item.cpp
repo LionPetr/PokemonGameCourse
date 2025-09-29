@@ -1,5 +1,5 @@
 #include "../../include/Inventory/Item.h"
-#include <iostream>
+
 Item::Item()
 {
 	name = "item";
@@ -17,10 +17,28 @@ Item::Item(std::string Iname, ItemType IitemType)
 	itemType = IitemType;
 }
 
+Item::Item(std::string Iname, ItemType IitemType, ItemTarget ItargetType)
+{
+	name = Iname;
+	itemType = IitemType;
+	targetType = ItargetType;
+}
+
 std::string Item::getName()
 {
 	return name;
 }
+
+ItemType& Item::getItemType()
+{
+	return itemType;
+}
+
+ItemTarget& Item::getItemTarget()
+{
+	return targetType;
+}
+
 
 int Item::getQuantity()
 {

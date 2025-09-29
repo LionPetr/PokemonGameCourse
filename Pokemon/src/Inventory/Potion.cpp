@@ -5,7 +5,7 @@ HealingPotion::HealingPotion() : Item("Potion", ItemType::POTION) {}
 
 HealingPotion::HealingPotion(std::string Iname) : Item(Iname, ItemType::POTION) {}
 
-HealingPotion::HealingPotion(std::string Iname, int IhealingAmount) : Item(Iname, ItemType::POTION)
+HealingPotion::HealingPotion(std::string Iname, int IhealingAmount) : Item(Iname, ItemType::POTION, ItemTarget::SELF)
 {
 	healingAmount = IhealingAmount;
 }
