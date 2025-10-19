@@ -15,6 +15,8 @@ private:
 	void updateBattleState();
 	void handleReward(Player& player, Pokemon& wildPokemon);
 
+	void tryToEscape();
+
 
 	BattleState state;
 };

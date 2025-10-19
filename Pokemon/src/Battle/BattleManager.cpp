@@ -34,15 +34,20 @@ void BattleManager::battle(Player& player, Pokemon& wildPokemon)
 				actionUsed = handleActionChoice(player);
 			}
 
+			if (!state.battleOnGoing)
+			{
+				break;
+			}
 
-			if(state.playerPokemon->canAttack())
+
+			if(state.playerPokemon->canAttack() && state.playerTurn)
 			{
 				Utility::clearConsole();
 				state.playerPokemon->selectAndUseMove(state.wildPokemon, true);
 				std::cout << wildPokemon.getName() << " is at " << wildPokemon.getHealth() << "/" << wildPokemon.getMaxHealth() << std::endl;
 			}
 		}
-		else if(state.wildPokemon->canAttack())
+		if(state.wildPokemon->canAttack())
 		{
 			Utility::clearConsole();
 			state.wildPokemon->selectAndUseMove(state.playerPokemon, false);
@@ -55,7 +60,7 @@ void BattleManager::battle(Player& player, Pokemon& wildPokemon)
 		Utility::waitForEnter();
 	}
 	handleBattleOutcome();
-	if (!state.playerPokemon->isFainted())
+	if (!state.playerPokemon->isFainted() && state.wildPokemon->isFainted())
 	{
 		handleReward(player, wildPokemon);
 	}
@@ -113,9 +118,8 @@ bool BattleManager::handleActionChoice(Player& player)
 		return true;
 		break;
 	case 3:
-		std::cout << "not implemented yet" << std::endl;
-		Utility::waitForEnter();
-		return false;
+		tryToEscape();
+		return true;
 		break;
 	default:
 		std::cout << "handleActionChoice bad input" << std::endl;
@@ -130,7 +134,7 @@ void BattleManager::handleBattleOutcome()
 	{
 		std::cout << state.playerPokemon->getName() << " has fained! you lose the battle" << std::endl;
 	}
-	else
+	else if(state.wildPokemon->isFainted())
 	{
 		std::cout << "you defeated the wild " << state.wildPokemon->getName() << "!" << std::endl;
 	}
@@ -156,3 +160,21 @@ void BattleManager::handleReward(Player& player, Pokemon& wildPokemon)
 	std::cout << wildPokemon.getName() << " dropped a " << chosenItem.getName();
 	player.givePlayerItem(chosenItem);
 }
+
+void BattleManager::tryToEscape()
+{
+	int randomNumber = rand() % 2;
+	if (randomNumber)
+	{
+		std::cout << "you escaped the wild " << state.wildPokemon->getName() << std::endl;
+		state.battleOnGoing = false;
+	}
+	else
+	{
+		std::cout << "you tried escaping but were too slow" << std::endl;
+		state.playerTurn = false;
+	}
+	
+}
+
+
