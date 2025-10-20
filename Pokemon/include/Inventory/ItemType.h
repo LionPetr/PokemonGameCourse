@@ -3,7 +3,5 @@
 enum class ItemType
 {
 	POTION,
-	POKEBALL,
-	GEAR,
-	
+	POKEBALL
 };

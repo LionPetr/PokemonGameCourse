@@ -47,7 +47,7 @@ void BattleManager::battle(Player& player, Pokemon& wildPokemon)
 				std::cout << wildPokemon.getName() << " is at " << wildPokemon.getHealth() << "/" << wildPokemon.getMaxHealth() << std::endl;
 			}
 		}
-		if(state.wildPokemon->canAttack())
+		if(state.wildPokemon->canAttack() && !state.playerTurn)
 		{
 			Utility::clearConsole();
 			state.wildPokemon->selectAndUseMove(state.playerPokemon, false);

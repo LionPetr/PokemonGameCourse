@@ -14,4 +14,5 @@ void HealingPotion::useItem(Pokemon* target)
 {
 	std::cout << "healing potion heals " << target->getName() << " for " << healingAmount << " hp" << std::endl;
 	target->heal(healingAmount);
+	std::cout << target->getName() << " is at " << target->getHealth() << "/" << target->getMaxHealth() << " health" << std::endl;
 }

@@ -9,7 +9,7 @@ public:
 	HealingPotion(std::string Iname);
 	HealingPotion(std::string Iname, int IhealingAmount);
 
-	void useItem(Pokemon* target);
+	void useItem(Pokemon* target) override;
 
 private:
 	int healingAmount = 5;
