@@ -164,6 +164,7 @@
     <ClCompile Include="src\Inventory\InventoryManager.cpp" />
     <ClCompile Include="src\Inventory\Item.cpp" />
     <ClCompile Include="src\Inventory\HealingPotion.cpp" />
+    <ClCompile Include="src\Inventory\StunPotion.cpp" />
     <ClCompile Include="src\Main\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Character\Player\Player.cpp" />
@@ -200,6 +201,7 @@
     <ClInclude Include="include\Inventory\ItemType.h" />
     <ClInclude Include="include\Inventory\HealingPotion.h" />
     <ClInclude Include="include\Inventory\Pokeball.h" />
+    <ClInclude Include="include\Inventory\StunPotion.h" />
     <ClInclude Include="include\Main\Game.h" />
     <ClInclude Include="include\Pokemon\Grass.h" />
     <ClInclude Include="include\Character\Player\Player.hpp" />

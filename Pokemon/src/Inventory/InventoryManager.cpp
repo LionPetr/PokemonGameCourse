@@ -18,9 +18,11 @@ InventoryManager::InventoryManager()
 	itemList.push_back(new DamagePotion("Small Damage Potion", 10));
 	itemList.push_back(new DamagePotion("Small Damage Potion", 20));
 	itemList.push_back(new DamagePotion("Small Damage Potion", 50));
+	itemList.push_back(new StunPotion("Stun Potion"));
 	itemList.push_back(new Pokeball("Red Poke Ball", 10));
 	itemList.push_back(new Pokeball("Blue Poke Ball", 20));
 	itemList.push_back(new Pokeball("Black Poke Ball", 50));
+	
 
 }
 

@@ -122,9 +122,16 @@ void Pokemon::applyEffect(StatusEffectType effectToApply)
 	}
 }
 
+// for when we are setting an effect from a potion
+void Pokemon::setEffect(IStatusEffect* effect)
+{
+	appliedEffect = effect;
+}
+
 void Pokemon::clearEffect()
 {
-	appliedEffect = NULL;
+	delete appliedEffect;
+	appliedEffect = nullptr;
 }
 
 bool Pokemon::canApplyEffect()

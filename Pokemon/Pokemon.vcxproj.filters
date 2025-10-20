@@ -87,6 +87,9 @@
     <ClCompile Include="src\Inventory\DamagePotion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Inventory\StunPotion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Character\Player\Player.hpp">
@@ -180,6 +183,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Inventory\DamagePotion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Inventory\StunPotion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

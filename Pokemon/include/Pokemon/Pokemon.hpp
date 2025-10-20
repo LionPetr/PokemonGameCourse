@@ -44,6 +44,7 @@ public:
 	
 	bool canAttack();
 	void applyEffect(StatusEffectType effectToApply);
+	void setEffect(IStatusEffect* effect);
 	void clearEffect();
 	bool canApplyEffect();
 

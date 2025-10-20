@@ -1,6 +1,7 @@
 #pragma once
 #include "HealingPotion.h"
 #include "DamagePotion.h"
+#include "StunPotion.h"
 #include "Pokeball.h"
 #include <vector>
 #include "../Battle/BattleState.h"
