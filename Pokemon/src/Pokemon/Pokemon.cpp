@@ -5,6 +5,8 @@
 #include "../../include/Battle/BattleEffects/BurnedEffect.h"
 #include "../../include/Battle/BattleEffects/SleepingEffect.h"
 
+
+
 Pokemon::Pokemon()
 {
 	name = "Pikachu";
@@ -20,6 +22,12 @@ Pokemon::Pokemon(std::string Iname, PokemonType Itype, int Ihealth, std::vector<
 	health = Ihealth;
 	maxHealth = Ihealth;
 	moves = moveList;
+	dropList =
+	{
+		HealingPotion("Small Healing Potion"),
+		HealingPotion("Medium Healing Potion"),
+		HealingPotion("Large Healing Potion"),
+	};
 }
 
 bool Pokemon::isFainted()
@@ -114,14 +122,26 @@ void Pokemon::applyEffect(StatusEffectType effectToApply)
 	}
 }
 
+// for when we are setting an effect from a potion
+void Pokemon::setEffect(IStatusEffect* effect)
+{
+	appliedEffect = effect;
+}
+
 void Pokemon::clearEffect()
 {
-	appliedEffect = NULL;
+	delete appliedEffect;
+	appliedEffect = nullptr;
 }
 
 bool Pokemon::canApplyEffect()
 {
 	return appliedEffect == NULL;
+}
+
+const std::vector<Item>& Pokemon::getDropList()
+{
+	return dropList;
 }
 
 

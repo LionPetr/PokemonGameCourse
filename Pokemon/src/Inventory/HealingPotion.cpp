@@ -1,0 +1,18 @@
+#include "../../include/Inventory/HealingPotion.h"
+#include "../../include/Pokemon/Pokemon.hpp"
+
+HealingPotion::HealingPotion() : Item("Potion", ItemType::POTION) {}
+
+HealingPotion::HealingPotion(std::string Iname) : Item(Iname, ItemType::POTION) {}
+
+HealingPotion::HealingPotion(std::string Iname, int IhealingAmount) : Item(Iname, ItemType::POTION, ItemTarget::SELF)
+{
+	healingAmount = IhealingAmount;
+}
+
+void HealingPotion::useItem(Pokemon* target)
+{
+	std::cout << "healing potion heals " << target->getName() << " for " << healingAmount << " hp" << std::endl;
+	target->heal(healingAmount);
+	std::cout << target->getName() << " is at " << target->getHealth() << "/" << target->getMaxHealth() << " health" << std::endl;
+}

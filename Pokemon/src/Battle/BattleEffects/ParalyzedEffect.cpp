@@ -12,6 +12,12 @@ void ParalyzedEffect::applyEffect(Pokemon* target)
 	std::cout << target->getName() << " is now paralyzed for " << turnsleft << " turns" << std::endl;
 }
 
+void ParalyzedEffect::applyEffect(Pokemon* target, int turns)
+{
+	turnsleft = turns;
+	std::cout << target->getName() << " is now paralyzed for " << turnsleft << " turns" << std::endl;
+}
+
 std::string ParalyzedEffect::getEffectName()
 {
 	return "Paralyzed";

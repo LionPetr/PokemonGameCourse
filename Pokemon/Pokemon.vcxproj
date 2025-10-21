@@ -154,11 +154,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Inventory\DamagePotion.cpp" />
+    <ClCompile Include="src\Inventory\Pokeball.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\BurnedEffect.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\ParalyzedEffect.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\PoisonedEffect.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\SleepingEffect.cpp" />
     <ClCompile Include="src\Battle\BattleManager.cpp" />
+    <ClCompile Include="src\Inventory\InventoryManager.cpp" />
+    <ClCompile Include="src\Inventory\Item.cpp" />
+    <ClCompile Include="src\Inventory\HealingPotion.cpp" />
+    <ClCompile Include="src\Inventory\StunPotion.cpp" />
     <ClCompile Include="src\Main\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Character\Player\Player.cpp" />
@@ -189,6 +195,13 @@
     <ClInclude Include="include\Battle\BattleManager.h" />
     <ClInclude Include="include\Battle\BattleState.h" />
     <ClInclude Include="include\Battle\Move.h" />
+    <ClInclude Include="include\Inventory\DamagePotion.h" />
+    <ClInclude Include="include\Inventory\InventoryManager.h" />
+    <ClInclude Include="include\Inventory\Item.h" />
+    <ClInclude Include="include\Inventory\ItemType.h" />
+    <ClInclude Include="include\Inventory\HealingPotion.h" />
+    <ClInclude Include="include\Inventory\Pokeball.h" />
+    <ClInclude Include="include\Inventory\StunPotion.h" />
     <ClInclude Include="include\Main\Game.h" />
     <ClInclude Include="include\Pokemon\Grass.h" />
     <ClInclude Include="include\Character\Player\Player.hpp" />

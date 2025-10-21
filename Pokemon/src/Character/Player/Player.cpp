@@ -53,3 +53,13 @@ void Player::choosePokemon(int choice)
 	}
 	std::cout << "You chose " << chosenPokemon->getName() << std::endl;
 }
+
+InventoryManager& Player::getInventory()
+{
+	return inventory;
+}
+
+void Player::givePlayerItem(Item& item)
+{
+	inventory.addItem(item);
+}

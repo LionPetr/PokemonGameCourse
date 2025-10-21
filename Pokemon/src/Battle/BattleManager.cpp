@@ -17,23 +17,41 @@ void BattleManager::startBattle(Player& player, Pokemon& wildPokemon)
 		true,
 		true
 	};
-	battle(*player.chosenPokemon, wildPokemon);
+	battle(player, wildPokemon);
 }
 
-void BattleManager::battle(Pokemon& playerPokemon, Pokemon& wildPokemon)
+void BattleManager::battle(Player& player, Pokemon& wildPokemon)
 {
 	while (state.battleOnGoing)
 	{
 		Utility::clearConsole();
-		if (state.playerTurn && state.playerPokemon->canAttack())
+		if (state.playerTurn)
 		{
-			state.playerPokemon->selectAndUseMove(state.wildPokemon, true);
-			std::cout << wildPokemon.getName() << " is at " << wildPokemon.getHealth() << "/" << wildPokemon.getMaxHealth() << std::endl;
+			bool actionUsed = false;
+			
+			while (!actionUsed)
+			{
+				actionUsed = handleActionChoice(player);
+			}
+
+			if (!state.battleOnGoing)
+			{
+				break;
+			}
+
+
+			if(state.playerPokemon->canAttack() && state.playerTurn)
+			{
+				Utility::clearConsole();
+				state.playerPokemon->selectAndUseMove(state.wildPokemon, true);
+				std::cout << wildPokemon.getName() << " is at " << wildPokemon.getHealth() << "/" << wildPokemon.getMaxHealth() << std::endl;
+			}
 		}
-		else if(state.wildPokemon->canAttack())
+		if(state.wildPokemon->canAttack() && !state.playerTurn)
 		{
+			Utility::clearConsole();
 			state.wildPokemon->selectAndUseMove(state.playerPokemon, false);
-			std::cout << playerPokemon.getName() << " is at " << playerPokemon.getHealth() << "/" << playerPokemon.getMaxHealth() << std::endl;
+			std::cout << player.chosenPokemon->getName() << " is at " << state.playerPokemon->getHealth() << "/" << state.playerPokemon->getMaxHealth() << std::endl;
 		}
 
 		updateBattleState();
@@ -42,10 +60,72 @@ void BattleManager::battle(Pokemon& playerPokemon, Pokemon& wildPokemon)
 		Utility::waitForEnter();
 	}
 	handleBattleOutcome();
+	if (!state.playerPokemon->isFainted() && state.wildPokemon->isFainted())
+	{
+		handleReward(player, wildPokemon);
+	}
+	
 }
 
-void BattleManager::handleBattle(Pokemon& playerPokemon, Pokemon& wildPokemon)
+
+
+bool BattleManager::handleActionChoice(Player& player)
 {
+	int actualIndex;
+
+	Utility::clearConsole();
+	std::cout << "It is your turn!" << std::endl;
+	std::cout << "1. attack" << std::endl;
+	std::cout << "2. use item" << std::endl;
+	std::cout << "3. run away" << std::endl;
+	std::cout << "Choose your next action: ";
+	int choice1;
+	std::cin >> choice1;
+	Utility::clearInputBuffer();
+
+	while (choice1 < 1 || choice1 > 3)
+	{
+		std::cout << "Invalid choice, try again: ";
+		std::cin >> choice1;
+	}
+	switch (choice1)
+	{
+	case 1:
+		return true;
+	case 2:
+		std::cout << "Inventory: " << std::endl;
+		player.getInventory().printInventory();
+		std::cout << "What Item would you like to use?";
+		
+		int choice;
+		std::cin >> choice;
+		Utility::clearInputBuffer();
+
+		while (choice < 1 || choice > player.getInventory().getIndexMap().size() + 1)
+		{
+			std::cout << "Invalid choice, try again: ";
+			std::cin >> choice;
+		}
+
+		//go back feature
+		if(choice == player.getInventory().getIndexMap().size() + 1)
+		{
+			return false;
+		}
+
+		actualIndex = player.getInventory().getIndexMap()[choice - 1];
+		player.getInventory().useItem(actualIndex, state);
+		return true;
+		break;
+	case 3:
+		tryToEscape();
+		return true;
+		break;
+	default:
+		std::cout << "handleActionChoice bad input" << std::endl;
+		return false;
+	}
+	return false;
 }
 
 void BattleManager::handleBattleOutcome()
@@ -54,7 +134,7 @@ void BattleManager::handleBattleOutcome()
 	{
 		std::cout << state.playerPokemon->getName() << " has fained! you lose the battle" << std::endl;
 	}
-	else
+	else if(state.wildPokemon->isFainted())
 	{
 		std::cout << "you defeated the wild " << state.wildPokemon->getName() << "!" << std::endl;
 	}
@@ -72,3 +152,29 @@ void BattleManager::updateBattleState()
 	}
 
 }
+
+void BattleManager::handleReward(Player& player, Pokemon& wildPokemon)
+{
+	int choice = rand() % wildPokemon.getDropList().size();
+	Item chosenItem = wildPokemon.getDropList()[choice];
+	std::cout << wildPokemon.getName() << " dropped a " << chosenItem.getName();
+	player.givePlayerItem(chosenItem);
+}
+
+void BattleManager::tryToEscape()
+{
+	int randomNumber = rand() % 2;
+	if (randomNumber)
+	{
+		std::cout << "you escaped the wild " << state.wildPokemon->getName() << std::endl;
+		state.battleOnGoing = false;
+	}
+	else
+	{
+		std::cout << "you tried escaping but were too slow" << std::endl;
+		state.playerTurn = false;
+	}
+	
+}
+
+
