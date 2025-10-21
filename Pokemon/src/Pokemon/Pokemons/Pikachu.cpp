@@ -8,7 +8,12 @@ Pikachu::Pikachu()
 			Move("THUNDER SHOCK", 15),
 			Move("TACKLE", 10)
 		}) {
-};
+}
+Pokemon* Pikachu::clone()
+{
+	return new Pikachu();
+}
+;
 
 void Pikachu::attack(Move selectedMove, Pokemon* target)
 {

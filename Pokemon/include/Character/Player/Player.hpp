@@ -2,6 +2,7 @@
 #include <string>
 #include "../../../include/Pokemon/Pokemon.hpp"
 #include "../../Inventory/InventoryManager.h"
+#include "../../../include/Character/Player/ExperienceManager.h"
 
 class Player
 {
@@ -21,6 +22,14 @@ public:
     InventoryManager& getInventory();
     void givePlayerItem(Item& item);
 
+    ExperienceManager* getExpManager();
+
+
+    
+
+
 private:
     InventoryManager inventory;
+    ExperienceManager* expManager;
+    
 };

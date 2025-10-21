@@ -30,6 +30,22 @@ Pokemon::Pokemon(std::string Iname, PokemonType Itype, int Ihealth, std::vector<
 	};
 }
 
+Pokemon::Pokemon(const Pokemon& other) :
+	name(other.name),
+	type(other.type),
+	health(other.health),
+	maxHealth(other.maxHealth),
+	moves(other.moves),
+	dropList(other.dropList)
+{
+	appliedEffect = nullptr;
+}
+
+Pokemon* Pokemon::clone()
+{
+	return new Pokemon();
+}
+
 bool Pokemon::isFainted()
 {
 	return health <= 0;

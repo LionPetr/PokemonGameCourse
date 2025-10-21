@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Character\Player\ExperienceManager.cpp" />
     <ClCompile Include="src\Inventory\DamagePotion.cpp" />
     <ClCompile Include="src\Inventory\Pokeball.cpp" />
     <ClCompile Include="src\Battle\BattleEffects\BurnedEffect.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="include\Battle\BattleManager.h" />
     <ClInclude Include="include\Battle\BattleState.h" />
     <ClInclude Include="include\Battle\Move.h" />
+    <ClInclude Include="include\Character\Player\ExperienceManager.h" />
     <ClInclude Include="include\Inventory\DamagePotion.h" />
     <ClInclude Include="include\Inventory\InventoryManager.h" />
     <ClInclude Include="include\Inventory\Item.h" />

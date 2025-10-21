@@ -7,7 +7,12 @@ Caterpie::Caterpie()
 		Move("STICKY WEB", 25),
 		Move("TACKLE", 10)
 		}) {
-};
+}
+Pokemon* Caterpie::clone()
+{
+	return new Caterpie();
+}
+;
 
 void Caterpie::attack(Move selectedMove, Pokemon* target)
 {

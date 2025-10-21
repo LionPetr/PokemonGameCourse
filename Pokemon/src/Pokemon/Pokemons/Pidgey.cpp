@@ -7,7 +7,12 @@ Pidgey::Pidgey()
 		Move("GUST", 25),
 		Move("TACKLE", 10)
 		}) {
-};
+}
+Pokemon* Pidgey::clone()
+{
+	return new Pidgey();
+}
+;
 
 
 void Pidgey::attack(Move selectedMove, Pokemon* target)

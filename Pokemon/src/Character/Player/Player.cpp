@@ -14,6 +14,7 @@
 Player::Player()
 {
 	name = "Trainer";
+	expManager = new ExperienceManager();
 }
 
 Player::Player(const std::string& p_name)
@@ -27,6 +28,8 @@ Player::~Player()
 	{
 		delete(chosenPokemon);
 	}
+
+	delete(expManager);
 }
 
 
@@ -62,4 +65,9 @@ InventoryManager& Player::getInventory()
 void Player::givePlayerItem(Item& item)
 {
 	inventory.addItem(item);
+}
+
+ExperienceManager* Player::getExpManager()
+{
+	return expManager;
 }
