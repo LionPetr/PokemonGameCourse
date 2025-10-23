@@ -2,6 +2,7 @@
 #include <string>
 #include "../../../include/Pokemon/Pokemon.hpp"
 #include "../../Inventory/InventoryManager.h"
+#include "../../../include/Character/Player/ExperienceManager.h"
 
 class Player
 {
@@ -11,9 +12,6 @@ public:
 
     // Constructors
     Player();
-
-    Player(const std::string& p_name);
-
     ~Player();
 
     // Method to choose Pokemon
@@ -21,6 +19,12 @@ public:
     InventoryManager& getInventory();
     void givePlayerItem(Item& item);
 
+    ExperienceManager getExpManager();
+
 private:
+
+    EventBus bus;
     InventoryManager inventory;
+    ExperienceManager expManager;
+    
 };

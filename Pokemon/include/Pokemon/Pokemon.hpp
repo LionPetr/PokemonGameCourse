@@ -30,6 +30,9 @@ protected:
 public:
 	Pokemon();
 	Pokemon(std::string Iname, PokemonType Itype, int Ihealth, std::vector<Move> moveList);
+	Pokemon(const Pokemon& other);
+
+	virtual Pokemon* clone();
 
 	bool isFainted();
 	void takeDamage(int damage);

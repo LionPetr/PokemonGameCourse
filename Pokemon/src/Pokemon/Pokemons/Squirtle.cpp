@@ -7,7 +7,12 @@ Squirtle::Squirtle()
 		Move("RAPID SPIN", 8),
 		Move("TACKLE", 10)
 		}) {
-};
+}
+Pokemon* Squirtle::clone()
+{
+	return new Squirtle();
+}
+;
 
 void Squirtle::attack(Move selectedMove, Pokemon* target)
 {

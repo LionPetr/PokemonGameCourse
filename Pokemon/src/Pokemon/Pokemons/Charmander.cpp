@@ -7,7 +7,12 @@ Charmander::Charmander()
 		Move("FLAME BURST", 25),
 		Move("TACKLE", 10)
 		}) {
-};
+}
+Pokemon* Charmander::clone()
+{
+	return new Charmander();
+}
+;
 
 void Charmander::attack(Move selectedMove, Pokemon* target)
 {

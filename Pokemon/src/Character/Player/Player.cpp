@@ -11,14 +11,9 @@
 
 #include "iostream"
 
-Player::Player()
+Player::Player() : bus(), expManager(bus), inventory(bus)
 {
 	name = "Trainer";
-}
-
-Player::Player(const std::string& p_name)
-{
-	name = p_name;
 }
 
 Player::~Player()
@@ -62,4 +57,9 @@ InventoryManager& Player::getInventory()
 void Player::givePlayerItem(Item& item)
 {
 	inventory.addItem(item);
+}
+
+ExperienceManager Player::getExpManager()
+{
+	return expManager;
 }

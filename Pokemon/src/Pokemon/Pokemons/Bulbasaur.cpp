@@ -9,6 +9,11 @@ Bulbasaur::Bulbasaur()
 		}) {
 }
 
+Pokemon* Bulbasaur::clone()
+{
+	return new  Bulbasaur();
+}
+
 void Bulbasaur::attack(Move selectedMove, Pokemon* target)
 {
 	Pokemon::attack(selectedMove, target);

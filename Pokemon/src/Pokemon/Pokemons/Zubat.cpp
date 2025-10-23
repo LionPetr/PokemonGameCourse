@@ -7,7 +7,12 @@ Zubat::Zubat()
 		Move("LEECH LIFE", 25),
 		Move("TACKLE", 10)
 		}) {
-};
+}
+Pokemon* Zubat::clone()
+{
+	return new Zubat();
+}
+;
 
 void Zubat::attack(Move selectedMove, Pokemon* target)
 {
@@ -17,6 +22,7 @@ void Zubat::attack(Move selectedMove, Pokemon* target)
 	{
 		heal(selectedMove.power);
 		std::cout << name << " healed himself for " << selectedMove.power << " health" << std::endl;
+		std::cout << name << " is at " << health << "/" << maxHealth << " health" << std::endl;
 	}
 }
 

@@ -56,10 +56,11 @@ void Game::gameLoop(Player* player)
 		{
 			WildEncounterManager encounterManager;
 			Pokemon* encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+			Pokemon* cEncounteredPokemon = encounteredPokemon->clone();
 			cout << "A wild " << encounteredPokemon->getName() << " appeared!\n";
 			BattleManager battleManager;
-			battleManager.startBattle(*player, *encounteredPokemon);
-			//delete(encounteredPokemon);
+			battleManager.startBattle(*player, *cEncounteredPokemon);
+			delete(cEncounteredPokemon);
 			break;
 		}
 		case 2:
