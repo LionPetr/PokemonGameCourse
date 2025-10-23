@@ -158,7 +158,7 @@ void BattleManager::handleReward(Player& player, Pokemon& wildPokemon)
 	int choice = rand() % wildPokemon.getDropList().size();
 	Item chosenItem = wildPokemon.getDropList()[choice];
 	std::cout << wildPokemon.getName() << " dropped a " << chosenItem.getName() << std::endl;
-	player.getExpManager()->addExperience(10); //make experience amount depend on the pokemon
+	player.getExpManager().addExperience(10); //make experience amount depend on the pokemon
 	player.givePlayerItem(chosenItem);
 }
 

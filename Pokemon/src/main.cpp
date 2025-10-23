@@ -3,17 +3,15 @@
 #include <iostream>
 #include <limits>
 #include "../include/Character/ProfessorOak.h"
-
-
-
-
-
-
+#include "../include/Character/Player/ExperienceManager.h"
+#include "../include/Inventory/InventoryManager.h"
 
 
 
 int main()
 {
+
+
 	Player* player = new Player();
 	ProfessorOak* professor = new ProfessorOak();
 

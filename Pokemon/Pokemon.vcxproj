@@ -197,6 +197,7 @@
     <ClInclude Include="include\Battle\BattleState.h" />
     <ClInclude Include="include\Battle\Move.h" />
     <ClInclude Include="include\Character\Player\ExperienceManager.h" />
+    <ClInclude Include="include\Character\Player\LevelUpEvent.h" />
     <ClInclude Include="include\Inventory\DamagePotion.h" />
     <ClInclude Include="include\Inventory\InventoryManager.h" />
     <ClInclude Include="include\Inventory\Item.h" />
@@ -218,6 +219,7 @@
     <ClInclude Include="include\Pokemon\Pokemons\Zubat.h" />
     <ClInclude Include="include\Pokemon\PokemonType.hpp" />
     <ClInclude Include="include\Character\ProfessorOak.h" />
+    <ClInclude Include="include\Utility\EventBus.h" />
     <ClInclude Include="include\Utility\Interfaces\IStatusEffect.h" />
     <ClInclude Include="include\Utility\Utility.h" />
     <ClInclude Include="include\Battle\WildEncounterManager.h" />

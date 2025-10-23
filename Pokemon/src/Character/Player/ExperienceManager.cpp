@@ -1,12 +1,12 @@
 #include "../../../include/Character/Player/ExperienceManager.h"
+#include "../../../include/Inventory/InventoryManager.h"
 #include <iostream>
 
-ExperienceManager::ExperienceManager()
-{
-	experiencePoints = 0;
-	level = 0;
-	levelMaxPoints = 10;
-}
+
+
+ExperienceManager::ExperienceManager(EventBus& eventBus) : bus(eventBus), experiencePoints(0), level(0), levelMaxPoints(10) {}
+
+
 
 int ExperienceManager::getLevel()
 {
@@ -29,6 +29,12 @@ void ExperienceManager::levelUp()
 	experiencePoints = 0;
 	levelMaxPoints = calculateNextLevelXP();
 	std::cout << "You just leveled up! Your new level is " << level << std::endl;
+
+	for (int i = 0; i <= level; i++)
+	{
+
+	}
+
 	return ;
 }
 
@@ -40,6 +46,7 @@ void ExperienceManager::addExperience(int IexpAmount)
 	{
 		int leftover = experiencePoints - levelMaxPoints;
 		levelUp();
+		bus.publish("LevelUp", LevelUpEvent{ level });
 		experiencePoints += leftover;
 	}
 

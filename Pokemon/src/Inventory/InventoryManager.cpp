@@ -10,8 +10,11 @@
 	part of the player inventory and doesnt get saved to the indexMap so
 	the player can never access those items. 
 */
-InventoryManager::InventoryManager()
+InventoryManager::InventoryManager(EventBus& bus)
 {
+	bus.subscribe<LevelUpEvent>("LevelUp", [this](const LevelUpEvent& e) {
+		onLevelUp(e);
+		});
 	itemList.push_back(new HealingPotion("Small Healing Potion", 20));
 	itemList.push_back(new HealingPotion("Medium Healing Potion", 40));
 	itemList.push_back(new HealingPotion("Large Healing Potion", 100));
@@ -88,4 +91,9 @@ void InventoryManager::useItem(int position, BattleState& state)
 std::vector<int> InventoryManager::getIndexMap()
 {
 	return indexMap;
+}
+
+void InventoryManager::onLevelUp(const LevelUpEvent& e)
+{
+	std::cout << "InventoryManager Recieved Level up with level: " << e.newLevel << std::endl;
 }

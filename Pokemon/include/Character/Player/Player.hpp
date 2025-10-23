@@ -12,9 +12,6 @@ public:
 
     // Constructors
     Player();
-
-    Player(const std::string& p_name);
-
     ~Player();
 
     // Method to choose Pokemon
@@ -22,14 +19,12 @@ public:
     InventoryManager& getInventory();
     void givePlayerItem(Item& item);
 
-    ExperienceManager* getExpManager();
-
-
-    
-
+    ExperienceManager getExpManager();
 
 private:
+
+    EventBus bus;
     InventoryManager inventory;
-    ExperienceManager* expManager;
+    ExperienceManager expManager;
     
 };

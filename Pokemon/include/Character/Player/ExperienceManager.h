@@ -1,10 +1,12 @@
 #pragma once
+#include "../../Utility/EventBus.h"
+#include "LevelUpEvent.h"
 
 class ExperienceManager
 {
 
 public:
-	ExperienceManager();
+	ExperienceManager(EventBus& eventBus);
 
 	int getLevel();
 	int getExperiencePoints();
@@ -17,6 +19,8 @@ public:
 private:
 
 	int calculateNextLevelXP();
+
+	EventBus& bus;
 
 	int level;
 	int experiencePoints;

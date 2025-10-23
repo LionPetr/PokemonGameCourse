@@ -11,15 +11,9 @@
 
 #include "iostream"
 
-Player::Player()
+Player::Player() : bus(), expManager(bus), inventory(bus)
 {
 	name = "Trainer";
-	expManager = new ExperienceManager();
-}
-
-Player::Player(const std::string& p_name)
-{
-	name = p_name;
 }
 
 Player::~Player()
@@ -28,8 +22,6 @@ Player::~Player()
 	{
 		delete(chosenPokemon);
 	}
-
-	delete(expManager);
 }
 
 
@@ -67,7 +59,7 @@ void Player::givePlayerItem(Item& item)
 	inventory.addItem(item);
 }
 
-ExperienceManager* Player::getExpManager()
+ExperienceManager Player::getExpManager()
 {
 	return expManager;
 }

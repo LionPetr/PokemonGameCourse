@@ -5,11 +5,13 @@
 #include "Pokeball.h"
 #include <vector>
 #include "../Battle/BattleState.h"
+#include "../Utility/EventBus.h"
+#include "../Character/Player/LevelUpEvent.h"
 
 class InventoryManager
 {
 public:
-	InventoryManager();
+	InventoryManager(EventBus& bus);
 	~InventoryManager();
 
 	void printInventory();
@@ -17,6 +19,8 @@ public:
 	void addItem(Item& item);
 	void useItem(int position, BattleState& state);
 	std::vector<int> getIndexMap();
+
+	void onLevelUp(const LevelUpEvent& e);
 
 
 private:
